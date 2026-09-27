@@ -1,0 +1,7 @@
+ffmpeg-core.wasm
+vendor/ffmpeg-core.wasm
+*.zip
+server.py
+__pycache__
+.env
+node_modules

@@ -1,0 +1,82 @@
+{
+  "redirects": [
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "/privacy",
+      "statusCode": 301
+    },
+    {
+      "source": "/terms.html",
+      "destination": "/terms",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools/merge-pdf",
+      "destination": "/merge-pdf",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools/split-pdf",
+      "destination": "/split-pdf",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools/image-resizer",
+      "destination": "/resize-image",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools/pdf-to-word",
+      "destination": "/pdf-to-word",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools/word-to-pdf",
+      "destination": "/word-to-pdf",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools/images-to-pdf",
+      "destination": "/image-to-pdf",
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(tools/video-compressor|compress-video-.*)",
+      "headers": [
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Cross-Origin-Embedder-Policy",
+          "value": "require-corp"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "cross-origin"
+        }
+      ]
+    }
+  ]
+}

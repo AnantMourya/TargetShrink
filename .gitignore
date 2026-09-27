@@ -1,0 +1,16 @@
+# Sensitive files
+.env
+.env.*
+
+# Deployments & build caches
+.vercel
+.wrangler
+node_modules/
+
+# OS / Python caches
+__pycache__/
+*.pyc
+install_mingit.py
+verify_live_seo.py
+.DS_Store
+Thumbs.db

@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+  <title>TargetCompress — Compress Video, Image &amp; PDF to Exact KB / MB</title>
+
+  <meta name="description" content="Compress images, PDFs and videos to your exact target size (20KB, 50KB, 100KB, 200KB, 500KB, 1MB, 10MB) directly in your browser. Files never leave your device. 100% free.">
+
+  <link rel="canonical" href="https://www.targetcompress.in/">
+
+  <meta name="google-site-verification" content="google870e60fdfac8ba4f">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+
+
+  <!-- Open Graph / Social Media -->
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:title" content="TargetCompress — Compress Video, Image &amp; PDF to Exact KB / MB">
+
+  <meta property="og:description" content="Compress images, PDFs and videos to your exact target size (20KB, 50KB, 100KB, 200KB, 500KB, 1MB, 10MB) directly in your browser. Files never leave your device. 100% free.">
+
+  <meta property="og:url" content="https://www.targetcompress.in/">
+
+  <meta property="og:site_name" content="TargetCompress">
+
+  <meta property="og:image" content="https://www.targetcompress.in/og-image.png">
+
+  <meta property="og:image:width" content="1200">
+
+  <meta property="og:image:height" content="630">
+
+
+
+  <!-- Twitter Cards -->
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="TargetCompress — Compress Video, Image &amp; PDF to Exact KB / MB">
+
+  <meta name="twitter:description" content="Compress images, PDFs and videos to your exact target size (20KB, 50KB, 100KB, 200KB, 500KB, 1MB, 10MB) directly in your browser. Files never leave your device. 100% free.">
+
+  <meta name="twitter:url" content="https://www.targetcompress.in/">
+
+  <meta name="twitter:image" content="https://www.targetcompress.in/og-image.png">
+
+
+
+  <!-- Favicon & PWA -->
+
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="manifest" href="/site.webmanifest">
+
+  <meta name="theme-color" content="#0a0d14">
+
+
+
+    <!-- Structured Data (JSON-LD) for WebSite & FAQPage -->
+
+  <script type="application/ld+json">
+
+  [
+
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TargetCompress",
+      "url": "https://www.targetcompress.in/",
+      "logo": "https://www.targetcompress.in/logo-512x512.png",
+      "image": "https://www.targetcompress.in/logo-512x512.png"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TargetCompress",
+      "operatingSystem": "All",
+      "applicationCategory": "MultimediaApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "1280",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    },
+    {
+
+      "@context": "https://schema.org",
+
+      "@type": "WebSite",
+
+      "name": "TargetCompress",
+
+      "url": "https://www.targetcompress.in/",
+
+      "description": "Compress video, images, and PDF documents to exact KB or MB limits directly in your browser with zero server uploads.",
+
+      "potentialAction": {
+
+        "@type": "SearchAction",
+
+        "target": "https://www.targetcompress.in/?q={search_term_string}",
+
+        "query-input": "required name=search_term_string"
+
+      }
+
+    },
+
+    {
+
+      "@context": "https://schema.org",
+
+      "@type": "FAQPage",
+
+      "mainEntity": [
+
+        {
+
+          "@type": "Question",
+
+          "name": "How does TargetCompress compress to an exact target file size?",
+
+          "acceptedAnswer": {
+
+            "@type": "Answer",
+
+            "text": "TargetCompress inspects the input file duration, resolution, audio channels, and structure, then mathematically calculates the exact optimal video/audio bitrates or compression parameters needed to hit your specified target size on the very first try."
+
+          }
+
+        },
+
+        {
+
+          "@type": "Question",
+
+          "name": "Are my files, videos, or confidential documents uploaded anywhere?",
+
+          "acceptedAnswer": {
+
+            "@type": "Answer",
+
+            "text": "No. TargetCompress is 100% serverless and client-side. The compression engine runs using WebAssembly directly in your browser local sandbox memory. Your files are processed entirely in your browser and are never uploaded to any server. (The site uses analytics and ad scripts that do not access your files.)"
+
+          }
+
+        },
+
+        {
+
+          "@type": "Question",
+
+          "name": "Can I use TargetCompress on mobile phones (Android & iPhone)?",
+
+          "acceptedAnswer": {
+
+            "@type": "Answer",
+
+            "text": "Yes! TargetCompress is fully responsive and compatible with modern mobile browsers including Google Chrome, Safari, Samsung Internet, and Firefox on both Android and iOS devices."
+
+          }
+
+        },
+
+        {
+
+          "@type": "Question",
+
+          "name": "Which formats are supported for compression and conversion?",
+
+          "acceptedAnswer": {
+
+            "@type": "Answer",
+
+            "text": "We support MP4, WebM, MOV, and animated GIF for video; JPG, PNG, and WebP for images; standard PDF documents for reduction; and bidirectional PDF to Microsoft Word (.docx) and Word (.docx) to PDF conversion."
+
+          }
+
+        },
+
+        {
+
+          "@type": "Question",
+
+          "name": "Is TargetCompress completely free?",
+
+          "acceptedAnswer": {
+
+            "@type": "Answer",
+
+            "text": "Yes, TargetCompress is 100% free with no hidden fees, subscriptions, or watermarks. We support the site through clean, non-intrusive sponsor advertisements."
+
+          }
+
+        }
+
+      ]
+
+    }
+
+  ]
+
+  </script>
+
+
+
+  <!-- Vercel Web Analytics & Speed Insights Tracking -->
+
+  <script>
+
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+
+  </script>
+
+  <script defer src="/_vercel/insights/script.js" onerror="this.onerror=null;this.src='https://va.vercel-scripts.com/v1/script.js'"></script>
+
+  <script defer src="/_vercel/speed-insights/script.js" onerror="this.onerror=null;this.src='https://va.vercel-scripts.com/v1/speed-insights/script.js'"></script>
+
+
+
+  <!-- Google Fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="/styles.css">
+
+</head>
+
+<body>
+
+  <!-- Floating Animated Background Orbs -->
+
+  <div class="bg-orbs" aria-hidden="true">
+
+    <div class="orb orb-1"></div>
+
+    <div class="orb orb-2"></div>
+
+    <div class="orb orb-3"></div>
+
+    <div class="orb orb-4"></div>
+
+  </div>
+
+
+
+  <header>
+
+    <div class="container navbar">
+
+      <div class="logo-area">
+
+        <a href="/" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit;">
+
+          <img src="/favicon.svg" alt="TargetCompress Logo" class="site-logo-img" width="30" height="30" style="display:block;border-radius:8px;flex-shrink:0;">
+
+          <div class="logo-title">Target<span>Compress</span></div>
+
+        </a>
+
+      </div>
+
+      <div class="header-badges">
+
+        <span class="privacy-badge">🔒 100% In-Browser Privacy</span>
+
+        <span class="tech-badge">⚡ Zero Server Uploads</span>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <nav class="tool-nav-bar">
+
+    <div class="container">
+
+      <div class="hub-category-pills" id="categoryPillBar">
+
+        <button class="hub-pill active" data-category="all" type="button">
+
+          <span>🌟</span> All Tools (12)
+
+        </button>
+
+        <button class="hub-pill" data-category="pdf" type="button">
+
+          <span>📄</span> PDF Suite (8)
+
+        </button>
+
+        <button class="hub-pill" data-category="images" type="button">
+
+          <span>🖼️</span> Image Tools (3)
+
+        </button>
+
+        <button class="hub-pill" data-category="video" type="button">
+
+          <span>🎬</span> Video &amp; GIF (1)
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+
+  
+
+
+
+  <main class="main-content container">
+
+    <!-- 1. HERO -->
+
+      <section class="hero hero-home">
+
+        <h1>Compress Images, PDFs & Videos to Your Target Size</h1>
+
+        <p class="hero-subtext">Reduce files to 20KB, 50KB, 100KB, 200KB, 500KB, 1MB, 10MB and more — directly in your browser.</p>
+
+        <div class="hero-privacy-note">🔒 Your files stay on your device. No server upload. No account required.</div>
+
+
+
+        <div class="hero-primary-actions">
+
+          <a href="/tools/image-compressor" class="btn btn-primary btn-hero">
+
+            <span>🖼️</span> Compress an Image
+
+          </a>
+
+          <a href="/tools/pdf-compressor" class="btn btn-primary btn-hero">
+
+            <span>📄</span> Compress a PDF
+
+          </a>
+
+          <a href="/tools/video-compressor" class="btn btn-primary btn-hero">
+
+            <span>🎬</span> Compress a Video
+
+          </a>
+
+        </div>
+
+
+
+        <div class="hero-shortcuts-container">
+
+          <span class="shortcuts-label">🎯 Popular Target Sizes:</span>
+
+          <div class="shortcuts-chips">
+
+            <a href="/compress-image-to-20kb" class="shortcut-chip">20 KB</a>
+
+            <a href="/compress-image-to-50kb" class="shortcut-chip">50 KB</a>
+
+            <a href="/compress-pdf-to-100kb" class="shortcut-chip">100 KB</a>
+
+            <a href="/compress-pdf-to-200kb" class="shortcut-chip">200 KB</a>
+
+            <a href="/compress-pdf-to-500kb" class="shortcut-chip">500 KB</a>
+
+            <a href="/compress-pdf-to-1mb" class="shortcut-chip">1 MB</a>
+
+            <a href="/compress-video-to-10mb" class="shortcut-chip">10 MB</a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- 2. MOST POPULAR TOOLS -->
+
+      <section class="home-section">
+
+        <div class="section-header">
+
+          <h2>Most Popular Tools</h2>
+
+          <p>Instant browser-based compression to meet strict file size limits on the first try.</p>
+
+        </div>
+
+        <div class="popular-tools-grid">
+
+          <a href="/tools/image-compressor" class="popular-tool-card" style="text-decoration:none;color:inherit;">
+
+            <span class="popular-tool-badge">High Intent</span>
+
+            <div class="tool-icon">🖼️</div>
+
+            <h3>Target-Size Image Compressor</h3>
+
+            <p>Compress JPG, PNG, and WebP photos to 20KB, 50KB, 100KB or any exact KB limit for exam portals and admissions.</p>
+
+            <div class="tool-cta">Compress Image to Target Size ➔</div>
+
+          </a>
+
+          <a href="/tools/pdf-compressor" class="popular-tool-card" style="text-decoration:none;color:inherit;">
+
+            <span class="popular-tool-badge">Most Used</span>
+
+            <div class="tool-icon">📄</div>
+
+            <h3>Target-Size PDF Compressor</h3>
+
+            <p>Shrink PDF documents strictly under 100KB, 200KB, 500KB or 1MB for government portals, job applications &amp; visa forms.</p>
+
+            <div class="tool-cta">Compress PDF to Target Size ➔</div>
+
+          </a>
+
+          <a href="/tools/video-compressor" class="popular-tool-card" style="text-decoration:none;color:inherit;">
+
+            <span class="popular-tool-badge">Flagship</span>
+
+            <div class="tool-icon">🎬</div>
+
+            <h3>Target-Size Video Compressor</h3>
+
+            <p>Compress MP4, WebM, and GIF files to exact limits like Discord 10MB or Slack 5MB with two-pass bitrate calculation.</p>
+
+            <div class="tool-cta">Compress Video to Target Size ➔</div>
+
+          </a>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- 3. POPULAR TARGET SIZES -->
+
+      <section class="home-section">
+
+        <div class="section-header">
+
+          <h2>Popular Target Sizes</h2>
+
+          <p>Quickly jump to dedicated compression tools tailored for specific file size thresholds.</p>
+
+        </div>
+
+        <div class="sizes-grid-container">
+
+          <div class="size-category-box">
+
+            <h4><span>🖼️</span> Image Target Sizes</h4>
+
+            <div class="size-links-list">
+
+              <a href="/compress-image-to-20kb" class="size-link-item"><span>Compress Image to 20KB</span><span class="size-pill-tag">20 KB</span></a>
+
+              <a href="/compress-image-to-50kb" class="size-link-item"><span>Compress Image to 50KB</span><span class="size-pill-tag">50 KB</span></a>
+
+              <a href="/compress-image-to-100kb" class="size-link-item"><span>Compress Image to 100KB</span><span class="size-pill-tag">100 KB</span></a>
+
+              <a href="/compress-image-to-200kb" class="size-link-item"><span>Compress Image to 200KB</span><span class="size-pill-tag">200 KB</span></a>
+
+              <a href="/compress-image-to-500kb" class="size-link-item"><span>Compress Image to 500KB</span><span class="size-pill-tag">500 KB</span></a>
+
+            </div>
+
+          </div>
+
+          <div class="size-category-box">
+
+            <h4><span>📄</span> PDF Target Sizes</h4>
+
+            <div class="size-links-list">
+
+              <a href="/compress-pdf-to-50kb" class="size-link-item"><span>Compress PDF to 50KB</span><span class="size-pill-tag">50 KB</span></a>
+
+              <a href="/compress-pdf-to-100kb" class="size-link-item"><span>Compress PDF to 100KB</span><span class="size-pill-tag">100 KB</span></a>
+
+              <a href="/compress-pdf-to-200kb" class="size-link-item"><span>Compress PDF to 200KB</span><span class="size-pill-tag">200 KB</span></a>
+
+              <a href="/compress-pdf-to-500kb" class="size-link-item"><span>Compress PDF to 500KB</span><span class="size-pill-tag">500 KB</span></a>
+
+              <a href="/compress-pdf-to-1mb" class="size-link-item"><span>Compress PDF to 1MB</span><span class="size-pill-tag">1 MB</span></a>
+
+            </div>
+
+          </div>
+
+          <div class="size-category-box">
+
+            <h4><span>🎬</span> Video Target Sizes</h4>
+
+            <div class="size-links-list">
+
+              <a href="/compress-video-to-10mb" class="size-link-item"><span>Compress Video to 10MB (Discord)</span><span class="size-pill-tag">10 MB</span></a>
+
+              <a href="/compress-video-to-25mb" class="size-link-item"><span>Compress Video to 25MB (Nitro/Mail)</span><span class="size-pill-tag">25 MB</span></a>
+
+              <a href="/compress-video-to-50mb" class="size-link-item"><span>Compress Video to 50MB (Uploads)</span><span class="size-pill-tag">50 MB</span></a>
+
+              <a href="/resize-image" class="size-link-item"><span>Resize Image Dimensions</span><span class="size-pill-tag">Pixels</span></a>
+
+              <a href="/merge-pdf" class="size-link-item"><span>Merge Multiple PDFs</span><span class="size-pill-tag">Docs</span></a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- 4. WHY TARGETCOMPRESS -->
+
+      <section class="home-section">
+
+        <div class="section-header">
+
+          <h2>Why TargetCompress?</h2>
+
+          <p>Built specifically to solve the frustration of uploading files to websites with strict size limits.</p>
+
+        </div>
+
+        <div class="why-grid">
+
+          <div class="why-card">
+
+            <span class="why-icon">🎯</span>
+
+            <h4>Target-Size Precision</h4>
+
+            <p>Specify the exact KB or MB ceiling required by your portal. No guessing percentage sliders or re-trying multiple times.</p>
+
+          </div>
+
+          <div class="why-card">
+
+            <span class="why-icon">🔒</span>
+
+            <h4>Browser-Side Processing</h4>
+
+            <p>Your files never leave your device. File processing happens directly in your browser using modern WebAssembly and Canvas technology.</p>
+
+          </div>
+
+          <div class="why-card">
+
+            <span class="why-icon">⚡</span>
+
+            <h4>Instant &amp; Queue-Free</h4>
+
+            <p>No waiting in server conversion queues. Compression utilizes your local device hardware for immediate processing.</p>
+
+          </div>
+
+          <div class="why-card">
+
+            <span class="why-icon">💰</span>
+
+            <h4>100% Free Forever</h4>
+
+            <p>No account required, no email subscriptions, no daily limits, and zero watermarks added to your documents.</p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- 5. COMPRESS FILES FOR ONLINE FORMS -->
+
+      <section class="home-section">
+
+        <div class="section-header">
+
+          <h2>Compress Files for Online Forms</h2>
+
+          <p>Pass strict document and photo upload validators for government jobs, exams, admissions, and visa applications.</p>
+
+        </div>
+
+        <div class="forms-grid">
+
+          <a href="/compress-image-to-20kb" class="form-item-card">
+
+            <span class="form-badge">PHOTO &bull; 20 KB</span>
+
+            <h4>Compress Photo to 20KB</h4>
+
+            <p>Strict limit for admit cards, hall tickets &amp; entrance examination portals.</p>
+
+          </a>
+
+          <a href="/compress-image-to-50kb" class="form-item-card">
+
+            <span class="form-badge">PHOTO &bull; 50 KB</span>
+
+            <h4>Compress Photo to 50KB</h4>
+
+            <p>Standard passport photo ceiling for state &amp; central recruitment applications.</p>
+
+          </a>
+
+          <a href="/compress-image-to-100kb" class="form-item-card">
+
+            <span class="form-badge">PHOTO &bull; 100 KB</span>
+
+            <h4>Compress Photo to 100KB</h4>
+
+            <p>High-resolution ID photo limit for university admission forms and profiles.</p>
+
+          </a>
+
+          <a href="/compress-signature-to-20kb" class="form-item-card">
+
+            <span class="form-badge">SIGNATURE &bull; 20 KB</span>
+
+            <h4>Compress Signature to 20KB</h4>
+
+            <p>Clear, sharp black/white digital signature scan optimization.</p>
+
+          </a>
+
+          <a href="/compress-pdf-to-50kb" class="form-item-card">
+
+            <span class="form-badge">DOCUMENT &bull; 50 KB</span>
+
+            <h4>Compress PDF to 50KB</h4>
+
+            <p>Extreme document downscaling for small government portal attachments.</p>
+
+          </a>
+
+          <a href="/compress-pdf-to-100kb" class="form-item-card">
+
+            <span class="form-badge">DOCUMENT &bull; 100 KB</span>
+
+            <h4>Compress PDF to 100KB</h4>
+
+            <p>Standard ceiling for identity proofs, caste certificates &amp; affidavits.</p>
+
+          </a>
+
+          <a href="/compress-pdf-to-200kb" class="form-item-card">
+
+            <span class="form-badge">DOCUMENT &bull; 200 KB</span>
+
+            <h4>Compress PDF to 200KB</h4>
+
+            <p>Optimal for multi-page certificates, marksheets &amp; academic transcripts.</p>
+
+          </a>
+
+          <a href="/resize-image" class="form-item-card">
+
+            <span class="form-badge">DIMENSIONS &bull; PIXELS</span>
+
+            <h4>Resize Photo Dimensions</h4>
+
+            <p>Adjust width × height in exact pixels (e.g. 200x230px, 350x450px) for forms.</p>
+
+          </a>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- 6. STUDENT & JOB APPLICATION SUITE -->
+
+      <section class="home-section">
+
+        <div class="section-header">
+
+          <h2>Student &amp; Job Application Suite</h2>
+
+          <p>Everything you need to prepare resumes, certificates, and portfolios for job portals and university submissions.</p>
+
+        </div>
+
+        <div class="forms-grid">
+
+          <a href="/compress-pdf-to-500kb" class="form-item-card">
+
+            <span class="form-badge">RESUME &bull; 500 KB</span>
+
+            <h4>Resume PDF Compression</h4>
+
+            <p>Keep your CV sharp and readable while fitting under recruiter email &amp; ATS limits.</p>
+
+          </a>
+
+          <a href="/compress-pdf-to-1mb" class="form-item-card">
+
+            <span class="form-badge">PORTFOLIO &bull; 1 MB</span>
+
+            <h4>Portfolio PDF Compression</h4>
+
+            <p>Compress multi-page design portfolios and work samples to under 1MB.</p>
+
+          </a>
+
+          <a href="/merge-pdf" class="form-item-card">
+
+            <span class="form-badge">APPLICATION &bull; MERGE</span>
+
+            <h4>Merge Documents into One PDF</h4>
+
+            <p>Combine resume, cover letter, and certificates into a single ordered submission.</p>
+
+          </a>
+
+          <a href="/pdf-to-word" class="form-item-card">
+
+            <span class="form-badge">EDIT &bull; DOCX</span>
+
+            <h4>PDF to Word Converter</h4>
+
+            <p>Convert existing PDF resumes back into editable Word (.docx) documents.</p>
+
+          </a>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- 7. ALL TOOLS DIRECTORY -->
+
+      <section class="home-section" id="all-tools">
+
+        <div class="section-header">
+
+          <h2>All In-Browser File Tools (12)</h2>
+
+          <p>Browse the full suite of client-side file compression, conversion, and editing utilities.</p>
+
+        </div>
+
+
+
+        <!-- Category Filter Tabs directly on top of the tools table -->
+
+        <div class="hub-category-pills table-category-pills" id="tableCategoryPills" style="margin: 0 auto 28px auto; max-width: 650px; justify-content: center;">
+
+          <button class="hub-pill active" data-category="all" type="button">
+
+            <span>🌟</span> All Tools (12)
+
+          </button>
+
+          <button class="hub-pill" data-category="pdf" type="button">
+
+            <span>📄</span> PDF Suite (8)
+
+          </button>
+
+          <button class="hub-pill" data-category="images" type="button">
+
+            <span>🖼️</span> Image Tools (3)
+
+          </button>
+
+          <button class="hub-pill" data-category="video" type="button">
+
+            <span>🎬</span> Video &amp; GIF (1)
+
+          </button>
+
+        </div>
+
+
+
+        <section class="tools-directory">
+
+        <!-- PDF Suite -->
+
+        <div class="category-group-header" data-category-group="pdf">
+
+          <h2>📄 PDF Suite</h2>
+
+          <span class="category-group-badge">8 Tools</span>
+
+        </div>
+
+        <div class="tools-hub-grid" data-category-group="pdf">
+
+          <a href="/tools/pdf-compressor" class="tool-hub-card" style="text-decoration:none;color:inherit;">
+
+            <div class="tool-card-icon-area">
+
+              <span class="tool-card-icon">🗜️</span>
+
+              <span class="tool-card-tag popular">Most Popular</span>
+
+            </div>
+
+            <h3>Target-Size PDF Shrinker</h3>
+
+            <p>Compress PDF documents strictly below exact limits like 100KB, 200KB, 500KB or 1MB for govt & job portals.</p>
+
+            <div class="tool-card-action">Open PDF Shrinker ➔</div>
+
+          </a>
+
+
+
+          <a href="/image-to-pdf" class="tool-hub-card" style="text-decoration:none;color:inherit;">
+
+            <div class="tool-card-icon-area">
+
+              <span class="tool-card-icon">📸</span>
+
+              <span class="tool-card-tag new">Essential</span>
+
+            </div>
+
+            <h3>Images to PDF</h3>
+
+            <p>Combine multiple JPG, PNG, and WebP photos or document scans into a single, clean PDF file.</p>
+
+            <div class="tool-card-action">Convert Images to PDF ➔</div>
+
+          </a>
+
+
+
+          <a href="/merge-pdf" class="tool-hub-card" style="text-decoration:none;color:inherit;">
+
+            <div class="tool-card-icon-area">
+
+              <span class="tool-card-icon">🔗</span>
+
+              <span class="tool-card-tag popular">Popular</span>
+
+            </div>
+
+            <h3>Merge PDFs</h3>
+
+            <p>Combine 2 or more PDF documents into one single file in your custom page order.</p>
+
+            <div class="tool-card-action">Merge PDFs ➔</div>
+
+          </a>
+
+
+
+          <a href="/split-pdf" class="tool-hub-card" style="text-decoration:none;color:inherit;">
+
+            <div class="tool-card-icon-area">
+
+              <span class="tool-card-icon">✂️</span>
+
+              <span class="tool-card-tag">Precision</span>
+
+            </div>
+
+            <h3>Split & Extract Pages</h3>
+
+            <p>Extract specific page numbers or page ranges (e.g. 1-3, 5, 8-12) from any PDF file.</p>
+
+            <div class="tool-card-action">Split PDF ➔</div>
+
+          </a>
+
+
+
+          <a href="/tools/pdf-to-images" class="tool-hub-card" style="text-decoration:none;color:inherit;">
+
+            <div class="tool-card-icon-area">
+
+              <span class="tool-card-icon">🖼️</span>
+
+              <span class="tool-card-tag">High-Res</span>
+
+            </div>
+
+            <h3>PDF to Images</h3>
+
+            <p>Extract and render every page of your PDF into high-resolution JPG or PNG pictures.</p>
+
+            <div class="tool-card-action">Convert PDF to Images ➔</div>
+
+          </a>
+
+
+
+          <a href="/tools/rotate-pdf" class="tool-hub-card" style="text-decoration:none;color:inherit;">
+
+            <div class="tool-card-icon-area">
+
+              <span class="tool-card-icon">🔄</span>
+
+              <span class="tool-card-tag">Fast</span>
+
+            </div>
+
+            <h3>Rotate PDF Pages</h3>
+
+            <p>Permanently rotate sideways or upside-down pages by 90°, 180°, or 270°.</p>
+
+            <div class="tool-card-action">Rotate PDF ➔</div>
+
+          </a>
+
+
+
+          <a href="/tools/watermark-pdf" class="tool-hub-card" style="text-decoration:none;color:inherit;">
+
+            <div class="tool-card-icon-area">
+
+              <span class="tool-card-icon">💧</span>
+
+              <span class="tool-card-tag">Security</span>
+
+            </div>
+
+            <h3>Watermark PDF</h3>
+
+            <p>Add customizable diagonal text stamps ("CONFIDENTIAL", "DRAFT") across pages.</p>
+
+            <div class="tool-card-action">Watermark PDF ➔</div>
+
+          </a>
+
+
+
+          <a href="/pdf-to-word" class="tool-hub-card" style="text-decoration:none;color:inherit;">
+
+            <div class="tool-card-icon-area">
+
+              <span class="tool-card-icon">📑</span>
+
+              <span class="tool-card-tag hot">Bi-directional</span>
+
+            </div>
+
+            <h3>PDF ⇄ Word Converter</h3>
+
+            <p>Convert PDF to editable Word (.docx) documents, or turn Word files into clean PDFs.</p>
+
+            <div class="tool-card-action">Convert PDF ⇄ Word ➔</div>
+
+          </a>
+
+        </div>
+
+
+
+        <!-- Image Tools -->
+
+        <div class="category-group-header" data-category-group="images">
+
+          <h2>🖼️ Image Suite</h2>
+
+          <span class="category-group-badge">3 Tools</span>
+
+        </div>
+
+        <div class="tools-hub-grid" data-category-group="images">
+
+          <a href="/tools/image-compressor" class="tool-hub-card" style="text-decoration:none;color:inherit;">
+
+            <div class="tool-card-icon-area">
+
+              <span class="tool-card-icon">🗜️</span>
+
+              <span class="tool-card-tag popular">Most Popular</span>
+
+            </div>
+
+            <h3>Target-Size Image Shrinker</h3>
+
+            <p>Downscale JPG, PNG, and WebP pictures strictly below target KB (e.g. 50 KB passport or 100 KB exam photo).</p>
+
+            <div class="tool-card-action">Open Image Shrinker ➔</div>
+
+          </a>
+
+
+
+          <a href="/tools/image-converter" class="tool-hub-card" style="text-decoration:none;color:inherit;">
+
+            <div class="tool-card-icon-area">
+
+              <span class="tool-card-icon">🔄</span>
+
+              <span class="tool-card-tag new">New</span>
+
+            </div>
+
+            <h3>Image Format Converter</h3>
+
+            <p>Convert between JPG, PNG, and WebP instantly while preserving visual quality.</p>
+
+            <div class="tool-card-action">Convert Image Format ➔</div>
+
+          </a>
+
+
+
+          <a href="/resize-image" class="tool-hub-card" style="text-decoration:none;color:inherit;">
+
+            <div class="tool-card-icon-area">
+
+              <span class="tool-card-icon">📐</span>
+
+              <span class="tool-card-tag">Exact Pixels</span>
+
+            </div>
+
+            <h3>Image Resizer</h3>
+
+            <p>Resize pixel width × height or scale by percentage with locked aspect ratio.</p>
+
+            <div class="tool-card-action">Resize Image ➔</div>
+
+          </a>
+
+        </div>
+
+
+
+        <!-- Video & GIF -->
+
+        <div class="category-group-header" data-category-group="video">
+
+          <h2>🎬 Video & GIF Tools</h2>
+
+          <span class="category-group-badge">1 Tool</span>
+
+        </div>
+
+        <div class="tools-hub-grid" data-category-group="video">
+
+          <a href="/tools/video-compressor" class="tool-hub-card" style="text-decoration:none;color:inherit;">
+
+            <div class="tool-card-icon-area">
+
+              <span class="tool-card-icon">🎯</span>
+
+              <span class="tool-card-tag hot">Flagship</span>
+
+            </div>
+
+            <h3>Exact Target Video & GIF Reducer</h3>
+
+            <p>Calculate two-pass bitrate to compress video & GIF files strictly under Discord 10MB, Slack 5MB, or custom limits.</p>
+
+            <div class="tool-card-action">Compress Video & GIF ➔</div>
+
+          </a>
+
+        </div>
+
+      </section>
+
+      </section>
+
+
+
+      <!-- 8. HOW IN-BROWSER PROCESSING WORKS -->
+
+      <section class="home-section">
+
+        <div class="section-header">
+
+          <h2>How In-Browser Processing Works</h2>
+
+          <p>TargetCompress eliminates server uploads by executing compression algorithms directly on your local device.</p>
+
+        </div>
+
+        <div class="steps-grid">
+
+          <div class="step-card">
+
+            <span class="step-number">01</span>
+
+            <h4>1. Select Your File</h4>
+
+            <p>Your file is loaded directly into your browser's private memory sandbox. Zero bytes are uploaded to our servers.</p>
+
+          </div>
+
+          <div class="step-card">
+
+            <span class="step-number">02</span>
+
+            <h4>2. Set Target Size</h4>
+
+            <p>Choose an exact target ceiling (e.g. 50 KB or 100 KB) or select a platform preset for Discord, Slack, or Govt forms.</p>
+
+          </div>
+
+          <div class="step-card">
+
+            <span class="step-number">03</span>
+
+            <h4>3. Browser-Side Compression</h4>
+
+            <p>Client-side WebAssembly and HTML5 Canvas engines calculate the optimal encoding parameters to preserve as much visual quality as possible.</p>
+
+          </div>
+
+          <div class="step-card">
+
+            <span class="step-number">04</span>
+
+            <h4>4. Instant Local Download</h4>
+
+            <p>The compressed file is generated locally as an in-memory blob for immediate download with zero server roundtrips.</p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- 9. SUPPORTED FORMATS -->
+
+      <section class="home-section">
+
+        <div class="section-header">
+
+          <h2>Supported Formats</h2>
+
+          <p>Comprehensive support across documents, images, and video media.</p>
+
+        </div>
+
+        <div class="formats-grid">
+
+          <div class="format-box">
+
+            <span class="format-ext">JPG / JPEG</span>
+
+            <h4>JPEG Photos</h4>
+
+            <p>Digital photos, camera scans, passport images</p>
+
+          </div>
+
+          <div class="format-box">
+
+            <span class="format-ext">PNG</span>
+
+            <h4>PNG Graphics</h4>
+
+            <p>Screenshots, signatures, logos &amp; transparent assets</p>
+
+          </div>
+
+          <div class="format-box">
+
+            <span class="format-ext">WebP</span>
+
+            <h4>WebP Media</h4>
+
+            <p>Modern high-efficiency web graphics</p>
+
+          </div>
+
+          <div class="format-box">
+
+            <span class="format-ext">PDF</span>
+
+            <h4>PDF Documents</h4>
+
+            <p>Resumes, certificates, scanned forms, portfolios</p>
+
+          </div>
+
+          <div class="format-box">
+
+            <span class="format-ext">MP4</span>
+
+            <h4>MP4 Video</h4>
+
+            <p>H.264 video clips for Discord, web &amp; messaging</p>
+
+          </div>
+
+          <div class="format-box">
+
+            <span class="format-ext">WebM</span>
+
+            <h4>WebM Video</h4>
+
+            <p>High-efficiency browser video with VP8/VP9</p>
+
+          </div>
+
+          <div class="format-box">
+
+            <span class="format-ext">GIF</span>
+
+            <h4>Animated GIF</h4>
+
+            <p>Reactions, Discord stickers, Slack custom emojis</p>
+
+          </div>
+
+          <div class="format-box">
+
+            <span class="format-ext">DOCX</span>
+
+            <h4>Word Documents</h4>
+
+            <p>Microsoft Word documents for bi-directional conversion</p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+    <!-- In-Page 300x250 Responsive Ad Banner -->
+
+    <aside class="ad-slot-300x250" aria-label="Advertisement">
+
+      <div class="ad-label">Advertisement</div>
+
+      <div class="ad-box-300x250">
+
+        <script type="text/javascript">
+
+          atOptions = {
+
+            'key' : '5aa38faf377bfcb674471d038b7933e1',
+
+            'format' : 'iframe',
+
+            'height' : 250,
+
+            'width' : 300,
+
+            'params' : {}
+
+          };
+
+        </script>
+
+        <script type="text/javascript" src="https://www.highrevenueformat.com/5aa38faf377bfcb674471d038b7933e1/invoke.js"></script>
+
+      </div>
+
+    </aside>
+
+
+
+    <!-- Platform File Size Limits Reference Table -->
+
+    <div class="limits-table-wrapper">
+
+      <h3><span>📋</span> Common Platform File Size Limits Quick Reference</h3>
+
+      <table class="limits-table">
+
+        <thead>
+
+          <tr>
+
+            <th>Platform / Service</th>
+
+            <th>Standard Upload Limit</th>
+
+            <th>Recommended Preset</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <td><strong>Discord (Free Tier)</strong></td>
+
+            <td><span class="badge-tag badge-discord">10 MB</span></td>
+
+            <td>Discord 10MB preset</td>
+
+          </tr>
+
+          <tr>
+
+            <td><strong>Discord Nitro Basic</strong></td>
+
+            <td><span class="badge-tag badge-discord">50 MB</span></td>
+
+            <td>Discord Nitro 50MB preset</td>
+
+          </tr>
+
+          <tr>
+
+            <td><strong>Slack (Free Workspaces)</strong></td>
+
+            <td><span class="badge-tag badge-slack">5 MB</span></td>
+
+            <td>Slack 5MB preset</td>
+
+          </tr>
+
+          <tr>
+
+            <td><strong>Gmail & Outlook Email</strong></td>
+
+            <td><span class="badge-tag badge-gmail">25 MB</span></td>
+
+            <td>Email 25MB preset</td>
+
+          </tr>
+
+          <tr>
+
+            <td><strong>Job & Govt Portals</strong></td>
+
+            <td><span class="badge-tag badge-portal">100 KB - 200 KB</span></td>
+
+            <td>Custom Target: 100 KB or 200 KB</td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+
+    <!-- Frequently Asked Questions (FAQ) Section -->
+
+    <div class="seo-header" style="margin-top: 50px;">
+
+      <h2>Frequently Asked Questions</h2>
+
+      <p>Everything you need to know about TargetCompress, browser-based compression, and file privacy.</p>
+
+    </div>
+
+
+
+    <div class="faq-container">
+
+      <details class="faq-item" open>
+
+        <summary class="faq-summary">How does TargetCompress compress to an exact target file size?</summary>
+
+        <div class="faq-content">
+
+          <p>Traditional compressors make you guess percentages (e.g., 50% or 75%), which rarely lands on the file size you actually need. TargetCompress inspects the input file duration, resolution, audio channels, and structure, then mathematically calculates the exact optimal video/audio bitrates or compression parameters needed to hit your specified target size on the very first try.</p>
+
+        </div>
+
+      </details>
+
+
+
+      <details class="faq-item">
+
+        <summary class="faq-summary">Are my files, videos, or confidential documents uploaded anywhere?</summary>
+
+        <div class="faq-content">
+
+          <p>No. TargetCompress is 100% serverless and client-side. The compression engine runs using WebAssembly (FFmpeg Wasm and PDF-Lib) directly in your browser local sandbox memory. Your files are processed entirely in your browser and are never uploaded to any server. (The site uses analytics and ad scripts that do not access your files.)</p>
+
+        </div>
+
+      </details>
+
+
+
+      <details class="faq-item">
+
+        <summary class="faq-summary">Can I use TargetCompress on mobile phones (Android & iPhone)?</summary>
+
+        <div class="faq-content">
+
+          <p>Yes! TargetCompress is fully responsive and compatible with modern mobile browsers including Google Chrome, Safari, Samsung Internet, and Firefox on both Android and iOS devices.</p>
+
+        </div>
+
+      </details>
+
+
+
+      <details class="faq-item">
+
+        <summary class="faq-summary">Which formats are supported for compression and conversion?</summary>
+
+        <div class="faq-content">
+
+          <p>We support MP4, WebM, MOV, and animated GIF for video; JPG, PNG, and WebP for images; standard PDF documents for reduction; and bidirectional PDF to Microsoft Word (.docx) and Word (.docx) to PDF conversion.</p>
+
+        </div>
+
+      </details>
+
+
+
+      <details class="faq-item">
+
+        <summary class="faq-summary">Is TargetCompress completely free?</summary>
+
+        <div class="faq-content">
+
+          <p>Yes, TargetCompress is 100% free with no hidden fees, subscriptions, or watermarks. We support the site through clean, non-intrusive sponsor advertisements.</p>
+
+        </div>
+
+      </details>
+
+    </div>
+
+  </section>
+
+  </main>
+
+
+
+  <footer class="site-footer">
+
+    <div class="container">
+
+      <div class="footer-columns-grid">
+
+        <div class="footer-col">
+
+          <h4>Core Tools</h4>
+
+          <ul>
+
+            <li><a href="/compress-image-to-50kb">Image Compressor</a></li>
+
+            <li><a href="/compress-pdf-to-100kb">PDF Compressor</a></li>
+
+            <li><a href="/compress-video-to-10mb">Video Compressor</a></li>
+
+            <li><a href="/resize-image">Image Resizer</a></li>
+
+            <li><a href="/merge-pdf">Merge PDF</a></li>
+
+            <li><a href="/split-pdf">Split PDF</a></li>
+
+            <li><a href="/pdf-to-word">PDF to Word</a></li>
+
+            <li><a href="/word-to-pdf">Word to PDF</a></li>
+
+            <li><a href="/image-to-pdf">Images to PDF</a></li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-col">
+
+          <h4>Online Forms</h4>
+
+          <ul>
+
+            <li><a href="/compress-image-to-20kb">Compress Photo to 20KB</a></li>
+
+            <li><a href="/compress-image-to-50kb">Compress Photo to 50KB</a></li>
+
+            <li><a href="/compress-image-to-100kb">Compress Photo to 100KB</a></li>
+
+            <li><a href="/compress-signature-to-20kb">Compress Signature to 20KB</a></li>
+
+            <li><a href="/compress-pdf-to-50kb">Compress PDF to 50KB</a></li>
+
+            <li><a href="/compress-pdf-to-100kb">Compress PDF to 100KB</a></li>
+
+            <li><a href="/compress-pdf-to-200kb">Compress PDF to 200KB</a></li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-col">
+
+          <h4>Guides &amp; Resources</h4>
+
+          <ul>
+
+            <li><a href="/guides/compress-image-to-50kb">How to Compress Image to 50KB</a></li>
+
+            <li><a href="/guides/compress-image-to-100kb">How to Compress Image to 100KB</a></li>
+
+            <li><a href="/guides/compress-pdf-to-100kb">How to Compress PDF to 100KB</a></li>
+
+            <li><a href="/guides/compress-video-to-10mb">Compress Video for Discord</a></li>
+
+            <li><a href="/guides/compress-signature">Digital Signature Guide</a></li>
+
+            <li><a href="/guides/image-size-vs-file-size">Image Dimensions vs File Size</a></li>
+
+            <li><a href="/guides/compress-image-on-android">Compress on Android</a></li>
+
+            <li><a href="/guides/compress-image-on-iphone">Compress on iPhone</a></li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-col">
+
+          <h4>Company &amp; Legal</h4>
+
+          <ul>
+
+            <li><a href="/about">About TargetCompress</a></li>
+
+            <li><a href="/contact">Contact &amp; Support</a></li>
+
+            <li><a href="/privacy">Privacy Policy</a></li>
+
+            <li><a href="/terms">Terms of Service</a></li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+
+        <div>&copy; 2026 TargetCompress &bull; File processing happens directly in your browser. Files never leave your device.</div>
+
+        <div>100% Free &bull; Zero Server Uploads &bull; Client-Side WebAssembly</div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <script type="module" src="/js/home.js"></script>
+
+</body>
+
+</html>
+
