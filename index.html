@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
 
@@ -251,6 +251,9 @@
 
   <link rel="stylesheet" href="/styles.css">
 
+  <!-- Theme: prevent flash of wrong theme -->
+  <script>(function(){var t=localStorage.getItem('tc-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');})()</script>
+
 </head>
 
 <body>
@@ -292,6 +295,11 @@
         <span class="privacy-badge">🔒 100% In-Browser Privacy</span>
 
         <span class="tech-badge">⚡ Zero Server Uploads</span>
+
+        <div class="theme-toggle-wrapper" onclick="toggleTheme()" title="Toggle dark/light theme">
+          <span class="theme-toggle-icon">🌙</span>
+          <button class="theme-toggle-btn" aria-label="Toggle theme"></button>
+        </div>
 
       </div>
 
@@ -1589,6 +1597,7 @@
 
 
 
+  <script src="/js/theme.js"></script>
   <script type="module" src="/js/home.js"></script>
 
 </body>
