@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TargetCompress</title>
   <link rel="stylesheet" href="popup.css">
+  <script src="../vendor/pdf-lib.min.js"></script>
 </head>
 <body>
   <div class="popup-wrapper">
@@ -17,20 +18,25 @@
       <span class="badge-privacy">🔒 100% Private</span>
     </header>
 
-    <!-- Presets -->
+    <!-- Mode Selector: Image vs PDF -->
+    <div class="mode-switch-wrap">
+      <div class="mode-toggle">
+        <button type="button" class="mode-btn active" id="modeImage">🖼️ Image</button>
+        <button type="button" class="mode-btn" id="modePdf">📄 PDF</button>
+      </div>
+    </div>
+
+    <!-- Presets Section -->
     <div class="preset-section">
-      <div class="section-label">Quick Presets:</div>
-      <div class="preset-chips">
-        <button type="button" class="preset-chip active" data-size="50" data-unit="KB">50 KB <span class="preset-desc">Govt ID</span></button>
-        <button type="button" class="preset-chip" data-size="20" data-unit="KB">20 KB <span class="preset-desc">Sign</span></button>
-        <button type="button" class="preset-chip" data-size="100" data-unit="KB">100 KB <span class="preset-desc">Form</span></button>
-        <button type="button" class="preset-chip" data-size="1" data-unit="MB">1 MB <span class="preset-desc">Web</span></button>
+      <div class="section-label" id="presetLabel">Image Presets:</div>
+      <div class="preset-chips" id="presetChipsContainer">
+        <!-- Will be dynamically populated for Image / PDF -->
       </div>
     </div>
 
     <!-- Target Size Control -->
     <div class="target-bar">
-      <span class="target-title">Target Size Limit:</span>
+      <span class="target-title">Target Limit:</span>
       <div class="target-input-row">
         <input type="number" id="targetInput" value="50" min="1" max="5000">
         <div class="unit-toggle">
@@ -43,9 +49,9 @@
     <!-- Dropzone Area -->
     <div class="dropzone" id="dropzone">
       <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/avif" style="display:none;">
-      <div class="dropzone-icon">📸</div>
-      <div class="dropzone-text">Drop image here, or <span>Browse</span></div>
-      <div class="dropzone-sub">JPG, PNG, WEBP • Zero cloud upload</div>
+      <div class="dropzone-icon" id="dropzoneIcon">📸</div>
+      <div class="dropzone-text" id="dropzoneText">Drop image here, or <span>Browse</span></div>
+      <div class="dropzone-sub" id="dropzoneSub">JPG, PNG, WEBP • Zero cloud upload</div>
     </div>
 
     <!-- Result / Processing Area (Hidden by default) -->
@@ -57,9 +63,6 @@
           <div class="file-stats" id="fileStats">Original: 2.4 MB ➔ Output: 49.5 KB</div>
         </div>
       </div>
-      <div class="progress-wrap" id="progressWrap" style="display:none;">
-        <div class="progress-bar" id="progressBar"></div>
-      </div>
       <button type="button" class="btn-download" id="downloadBtn">⚡ Download Compressed File</button>
     </div>
 
@@ -69,7 +72,7 @@
       <div class="footer-links">
         <a href="https://www.targetcompress.in/merge-pdf" class="ext-link" target="_blank">Merge PDF</a>
         <span class="link-dot">•</span>
-        <a href="https://www.targetcompress.in/compress-pdf-to-100kb" class="ext-link" target="_blank">PDF to 100KB</a>
+        <a href="https://www.targetcompress.in/split-pdf" class="ext-link" target="_blank">Split PDF</a>
         <span class="link-dot">•</span>
         <a href="https://www.targetcompress.in/tools/video-compressor" class="ext-link" target="_blank">Video Shrinker</a>
       </div>
