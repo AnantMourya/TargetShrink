@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TargetCompress</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-wrapper">
+    <!-- Header -->
+    <header class="popup-header">
+      <a href="https://www.targetcompress.in/" target="_blank" class="brand-link" id="brandLink">
+        <img src="../icons/icon-32.png" alt="TargetCompress" class="brand-icon">
+        <span class="brand-title">Target<span>Compress</span></span>
+      </a>
+      <span class="badge-privacy">🔒 100% Private</span>
+    </header>
+
+    <!-- Presets -->
+    <div class="preset-section">
+      <div class="section-label">Quick Presets:</div>
+      <div class="preset-chips">
+        <button type="button" class="preset-chip active" data-size="50" data-unit="KB">50 KB <span class="preset-desc">Govt ID</span></button>
+        <button type="button" class="preset-chip" data-size="20" data-unit="KB">20 KB <span class="preset-desc">Sign</span></button>
+        <button type="button" class="preset-chip" data-size="100" data-unit="KB">100 KB <span class="preset-desc">Form</span></button>
+        <button type="button" class="preset-chip" data-size="1" data-unit="MB">1 MB <span class="preset-desc">Web</span></button>
+      </div>
+    </div>
+
+    <!-- Target Size Control -->
+    <div class="target-bar">
+      <span class="target-title">Target Size Limit:</span>
+      <div class="target-input-row">
+        <input type="number" id="targetInput" value="50" min="1" max="5000">
+        <div class="unit-toggle">
+          <button type="button" class="unit-btn active" id="btnKb">KB</button>
+          <button type="button" class="unit-btn" id="btnMb">MB</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dropzone Area -->
+    <div class="dropzone" id="dropzone">
+      <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/avif" style="display:none;">
+      <div class="dropzone-icon">📸</div>
+      <div class="dropzone-text">Drop image here, or <span>Browse</span></div>
+      <div class="dropzone-sub">JPG, PNG, WEBP • Zero cloud upload</div>
+    </div>
+
+    <!-- Result / Processing Area (Hidden by default) -->
+    <div class="result-card" id="resultCard" style="display:none;">
+      <div class="file-info-row">
+        <div class="file-thumb" id="fileThumb">🖼️</div>
+        <div class="file-meta">
+          <div class="file-name" id="fileName">photo.jpg</div>
+          <div class="file-stats" id="fileStats">Original: 2.4 MB ➔ Output: 49.5 KB</div>
+        </div>
+      </div>
+      <div class="progress-wrap" id="progressWrap" style="display:none;">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <button type="button" class="btn-download" id="downloadBtn">⚡ Download Compressed File</button>
+    </div>
+
+    <!-- Quick Tools Links to targetcompress.in -->
+    <footer class="popup-footer">
+      <div class="footer-label">More Tools on Web:</div>
+      <div class="footer-links">
+        <a href="https://www.targetcompress.in/merge-pdf" class="ext-link" target="_blank">Merge PDF</a>
+        <span class="link-dot">•</span>
+        <a href="https://www.targetcompress.in/compress-pdf-to-100kb" class="ext-link" target="_blank">PDF to 100KB</a>
+        <span class="link-dot">•</span>
+        <a href="https://www.targetcompress.in/tools/video-compressor" class="ext-link" target="_blank">Video Shrinker</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

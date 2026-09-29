@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "TargetCompress — Compress Images & PDFs to Exact KB",
+  "version": "1.0.0",
+  "description": "Compress images and PDFs to exact target sizes (20KB, 50KB, 100KB, 1MB) directly in your browser. 100% private.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "TargetCompress — Exact Target Size Compressor",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "downloads"
+  ],
+  "homepage_url": "https://www.targetcompress.in/"
+}
