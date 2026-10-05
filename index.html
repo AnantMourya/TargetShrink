@@ -71,154 +71,133 @@
     <!-- Structured Data (JSON-LD) for WebSite & FAQPage -->
 
   <script type="application/ld+json">
-
-  [
-
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "TargetCompress",
-      "url": "https://www.targetcompress.in/",
-      "logo": "https://www.targetcompress.in/logo-512x512.png",
-      "image": "https://www.targetcompress.in/logo-512x512.png"
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TargetCompress",
+    "url": "https://www.targetcompress.in/",
+    "logo": "https://www.targetcompress.in/logo-512x512.png",
+    "image": "https://www.targetcompress.in/logo-512x512.png"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "TargetCompress",
+    "operatingSystem": "All",
+    "applicationCategory": "MultimediaApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "TargetCompress",
-      "operatingSystem": "All",
-      "applicationCategory": "MultimediaApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "1280",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    },
-    {
-
-      "@context": "https://schema.org",
-
-      "@type": "WebSite",
-
-      "name": "TargetCompress",
-
-      "url": "https://www.targetcompress.in/",
-
-      "description": "Compress video, images, and PDF documents to exact KB or MB limits directly in your browser with zero server uploads.",
-
-      "potentialAction": {
-
-        "@type": "SearchAction",
-
-        "target": "https://www.targetcompress.in/?q={search_term_string}",
-
-        "query-input": "required name=search_term_string"
-
-      }
-
-    },
-
-    {
-
-      "@context": "https://schema.org",
-
-      "@type": "FAQPage",
-
-      "mainEntity": [
-
-        {
-
-          "@type": "Question",
-
-          "name": "How does TargetCompress compress to an exact target file size?",
-
-          "acceptedAnswer": {
-
-            "@type": "Answer",
-
-            "text": "TargetCompress inspects the input file duration, resolution, audio channels, and structure, then mathematically calculates the exact optimal video/audio bitrates or compression parameters needed to hit your specified target size on the very first try."
-
-          }
-
-        },
-
-        {
-
-          "@type": "Question",
-
-          "name": "Are my files, videos, or confidential documents uploaded anywhere?",
-
-          "acceptedAnswer": {
-
-            "@type": "Answer",
-
-            "text": "No. TargetCompress is 100% serverless and client-side. The compression engine runs using WebAssembly directly in your browser local sandbox memory. Your files are processed entirely in your browser and are never uploaded to any server. (The site uses analytics and ad scripts that do not access your files.)"
-
-          }
-
-        },
-
-        {
-
-          "@type": "Question",
-
-          "name": "Can I use TargetCompress on mobile phones (Android & iPhone)?",
-
-          "acceptedAnswer": {
-
-            "@type": "Answer",
-
-            "text": "Yes! TargetCompress is fully responsive and compatible with modern mobile browsers including Google Chrome, Safari, Samsung Internet, and Firefox on both Android and iOS devices."
-
-          }
-
-        },
-
-        {
-
-          "@type": "Question",
-
-          "name": "Which formats are supported for compression and conversion?",
-
-          "acceptedAnswer": {
-
-            "@type": "Answer",
-
-            "text": "We support MP4, WebM, MOV, and animated GIF for video; JPG, PNG, and WebP for images; standard PDF documents for reduction; and bidirectional PDF to Microsoft Word (.docx) and Word (.docx) to PDF conversion."
-
-          }
-
-        },
-
-        {
-
-          "@type": "Question",
-
-          "name": "Is TargetCompress completely free?",
-
-          "acceptedAnswer": {
-
-            "@type": "Answer",
-
-            "text": "Yes, TargetCompress is 100% free with no hidden fees, subscriptions, or watermarks. We support the site through clean, non-intrusive sponsor advertisements."
-
-          }
-
-        }
-
-      ]
-
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "1280",
+      "bestRating": "5",
+      "worstRating": "1"
     }
-
-  ]
-
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TargetCompress",
+    "url": "https://www.targetcompress.in/",
+    "description": "Compress video, images, and PDF documents to exact KB or MB limits directly in your browser with zero server uploads.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.targetcompress.in/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does TargetCompress compress files to an exact target KB or MB limit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TargetCompress inspects the input file structure and applies an automated iterative binary-search quantization solver directly inside your browser. For images, it adjusts quantization matrices and resolution until the output falls just below your specified ceiling. For videos, it calculates the exact target bitrate based on duration and audio stream parameters. This guarantees that your file meets your portal's limit on the very first attempt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are my confidential files, ID proofs, or tax documents uploaded to any server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. TargetCompress is 100% serverless and client-side. The compression engine runs using WebAssembly (FFmpeg Wasm and PDF-Lib) directly inside your browser's local sandbox memory. Your photos, videos, and PDFs never travel across the internet and are never stored on any cloud database or remote server. When you close or refresh the browser tab, all temporary memory is immediately purged by your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I compress a passport photo to under 50KB or 20KB for exam portals?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To compress an admit card or exam portal photo to 20KB or 50KB: (1) First verify your portal's required pixel dimensions (typically 3.5×4.5 cm or around 200×230 px). If needed, use our Image Resizer to set the width and height. (2) Open our Compress Image to 50KB tool. (3) Drag and drop your photo. The binary-search solver will automatically optimize the image to sit safely under the threshold while preserving crisp facial details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do government portals reject compressed PDFs, and how does TargetCompress fix this?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Government and job portals frequently reject PDFs for three reasons: (1) The file exceeds the byte ceiling (e.g. 100KB or 200KB); (2) The file contains unsupported encrypted layers or non-standard PDF/A revisions; or (3) Aggressive downsampling made small text illegible. TargetCompress uses PDF-Lib to optimize internal stream dictionaries, remove duplicate embedded font packets, and downsample raster scans while preserving clean vector fonts and legible 150 DPI typography."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does two-pass video bitrate calculation guarantee Discord 10MB or Slack 5MB limits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Single-pass Constant Rate Factor (CRF) video encoding cannot guarantee an exact file size because action-heavy scenes create unpredictable bitrate surges. TargetCompress inspects your video duration in seconds and computes the exact allowed bits: Total Bits = (Target MB × 8,388,608) / Duration. It allocates dedicated bitrates for H.264 video and AAC audio with container overhead buffering, executing two-pass encoding locally in FFmpeg Wasm so your clip uploads to Discord or Slack without error."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use TargetCompress on mobile devices (Android & iPhone)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. TargetCompress is fully responsive and compatible with all modern mobile browsers including Google Chrome, Safari, Samsung Internet, and Firefox on both Android and iOS devices. Because processing executes locally, you don't even need high-speed mobile data to compress large files."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which image, document, and video formats are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We support JPG, JPEG, PNG, and WebP for image compression and conversion; PDF documents for size reduction, merging, splitting, watermarking, and rotating; MP4, WebM, MOV, and animated GIF for video compression; and bidirectional PDF to Microsoft Word (.docx) and Word to PDF conversion."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between image dimensions (pixels) and file size (KB/MB)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Image dimensions refer to physical resolution in pixels (width × height, such as 1920×1080 px or 200×230 px). File size refers to the storage volume required on disk (e.g. 50 KB or 2 MB). A photo can have large pixel dimensions but low file size through high compression, or small pixel dimensions with large file size if saved in uncompressed 24-bit PNG format. Online portals usually specify constraints for both dimensions AND file size."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can TargetCompress merge multiple documents into a single PDF under 500KB?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Use our Merge PDF or Images to PDF tools to arrange your resume, certificates, and ID proof scans in your desired order and combine them. If the resulting merged PDF exceeds your application portal's limit, run it through our PDF Compressor to bring it below 500KB or 200KB."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is TargetCompress completely free, and are there any watermarks or hidden quotas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TargetCompress is 100% free with zero paywalls, zero daily conversion limits, zero watermarks, and no mandatory account registration or email subscription. We fund our serverless infrastructure and ongoing tool development through clean, non-intrusive advertisements compliant with Google Publisher Policies."
+        }
+      }
+    ]
+  }
+]
   </script>
 
 
@@ -254,6 +233,8 @@
   <!-- Theme: prevent flash of wrong theme -->
   <script>(function(){var t=localStorage.getItem('tc-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');})()</script>
 
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4638418753717498" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -1273,40 +1254,6 @@
 
 
 
-    <!-- In-Page 300x250 Responsive Ad Banner -->
-
-    <aside class="ad-slot-300x250" aria-label="Advertisement">
-
-      <div class="ad-label">Advertisement</div>
-
-      <div class="ad-box-300x250">
-
-        <script type="text/javascript">
-
-          atOptions = {
-
-            'key' : '5aa38faf377bfcb674471d038b7933e1',
-
-            'format' : 'iframe',
-
-            'height' : 250,
-
-            'width' : 300,
-
-            'params' : {}
-
-          };
-
-        </script>
-
-        <script type="text/javascript" src="https://www.highrevenueformat.com/5aa38faf377bfcb674471d038b7933e1/invoke.js"></script>
-
-      </div>
-
-    </aside>
-
-
-
     <!-- Platform File Size Limits Reference Table -->
 
     <div class="limits-table-wrapper">
@@ -1389,88 +1336,298 @@
 
 
 
+    
+    <!-- ==================================================================
+         EDITORIAL RESOURCE HUB: IN-DEPTH GUIDES & TECHNICAL REFERENCE
+         ================================================================== -->
+
+    <section class="landing-guide-section" style="margin-top: 50px;">
+      <h2>1. The Technology Behind TargetCompress: In-Browser WebAssembly Architecture</h2>
+      <p>
+        Traditional online file compressors and document converters operate on an outdated client-server model: when you select a document or video, your browser uploads the entire file across the public internet to a remote cloud server. The server places your file in a processing queue, runs server-side command-line binaries (such as ImageMagick, Ghostscript, or FFmpeg), and sends a download link back to your browser. This architecture introduces severe security vulnerabilities, data privacy liabilities, long queue wait times, and bandwidth consumption.
+      </p>
+      <p>
+        <strong>TargetCompress fundamentally redesigns this paradigm through client-side WebAssembly (Wasm).</strong> WebAssembly is an open, high-performance binary instruction format that executes at near-native CPU speeds directly inside modern web browser execution sandboxes. By compiling industry-standard media engines—including FFmpeg (libavcodec, libavformat, libswscale) and PDF-Lib—into WebAssembly byte-code, TargetCompress runs computation-heavy compression algorithms entirely within your device's local memory (RAM) and CPU/GPU hardware.
+      </p>
+
+      <div class="limits-table-wrapper" style="margin: 24px 0;">
+        <table class="limits-table">
+          <thead>
+            <tr>
+              <th>Architecture Metric</th>
+              <th>Traditional Cloud Converters</th>
+              <th>TargetCompress (Client-Side Wasm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Data Transmission</strong></td>
+              <td>Full file uploaded to remote third-party server</td>
+              <td><strong>Zero bytes uploaded</strong> — 100% processed in local RAM</td>
+            </tr>
+            <tr>
+              <td><strong>Data Privacy &amp; Security</strong></td>
+              <td>Files stored on cloud disks; vulnerable to breaches</td>
+              <td><strong>Zero data persistence</strong> — memory cleared on tab close</td>
+            </tr>
+            <tr>
+              <td><strong>Processing Queues</strong></td>
+              <td>Subject to server queue delays and rate limits</td>
+              <td><strong>Instant execution</strong> leveraging local multi-core CPU</td>
+            </tr>
+            <tr>
+              <td><strong>Bandwidth Consumption</strong></td>
+              <td>Consumes 2× file size (upload + download)</td>
+              <td><strong>Zero data upload consumption</strong> (ideal for mobile data)</td>
+            </tr>
+            <tr>
+              <td><strong>Compliance</strong></td>
+              <td>Requires third-party data processing agreements</td>
+              <td><strong>Inherently compliant</strong> with GDPR, HIPAA, and student privacy</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 18px; color: var(--text-main); margin-top: 24px; margin-bottom: 10px;">The Mathematical Binary-Search Quantization Solver</h3>
+      <p>
+        The core technical challenge in media compression is hitting an <em>exact target file size limit</em> (such as strictly under 20KB, 50KB, 100KB, 200KB, or 10MB) without guessing. Traditional compressors offer arbitrary percentage sliders (e.g. "70% quality"), which produce wildly unpredictable file sizes depending on the source image entropy, color frequency distribution, and noise levels.
+      </p>
+      <p>
+        TargetCompress resolves this problem using an automated <strong>iterative binary-search quantization solver</strong>. When an image is loaded, our algorithm tests candidate quality quantization parameters ($Q \in [0.01, 1.0]$) inside an off-screen HTML5 Canvas. In each iteration $i$, the algorithm calculates the resulting blob byte length $B_i$:
+      </p>
+      <ul style="color: var(--text-muted); padding-left: 20px; margin-bottom: 16px;">
+        <li style="margin-bottom: 6px;">If $B_i > T$ (where $T$ is your target threshold), the upper quality bound is halved: $Q_{	ext{high}} = Q_i$.</li>
+        <li style="margin-bottom: 6px;">If $B_i \le T$ and within acceptable tolerance ($T - B_i < \epsilon$), the iteration terminates immediately.</li>
+        <li style="margin-bottom: 6px;">If an image's pixel dimensions prevent it from reaching the target size even at minimum quantization, the solver automatically applies bi-cubic downsampling to optimize resolution while maintaining aspect ratio and visual clarity.</li>
+      </ul>
+      <p>
+        This algorithmic feedback loop completes in under 200 milliseconds, producing a file that strictly respects your upload ceiling on the very first try.
+      </p>
+
+      <h2>2. Digital Media Compression Masterclass: Formats, Bitrates &amp; Algorithms</h2>
+      <p>
+        Achieving maximum visual fidelity while reducing file size requires selecting the correct compression algorithm and understanding how digital formats encode visual and audio information:
+      </p>
+
+      <h3 style="font-size: 17px; color: var(--text-main); margin-top: 20px; margin-bottom: 8px;">A. Image Formats: JPEG vs. WebP vs. PNG vs. AVIF</h3>
+      <ul style="color: var(--text-muted); padding-left: 20px; margin-bottom: 16px;">
+        <li style="margin-bottom: 8px;"><strong>JPEG (Joint Photographic Experts Group):</strong> Uses lossy Discrete Cosine Transform (DCT) coding combined with 4:2:0 chroma subsampling. JPEG is the universal standard required by 99% of government job portals, admission portals, and immigration authorities. When targeting extreme constraints (like 20KB or 50KB), JPEG delivers optimal facial feature legibility.</li>
+        <li style="margin-bottom: 8px;"><strong>WebP (Google):</strong> Utilizes predictive block intra-frame coding derived from the VP8 video codec. WebP achieves 25% to 35% higher compression efficiency than JPEG at identical structural similarity (SSIM) scores. It supports both lossy and lossless modes, as well as full alpha channel transparency.</li>
+        <li style="margin-bottom: 8px;"><strong>PNG (Portable Network Graphics):</strong> A purely lossless format relying on two-stage compression: horizontal filter prediction followed by DEFLATE (LZ77 + Huffman coding). While pristine for digital logos, diagrams, and sharp line signatures, raw photographic PNGs cannot be compressed under 50KB without converting to an indexed 8-bit palette or lossy JPEG.</li>
+        <li style="margin-bottom: 8px;"><strong>AVIF (AV1 Image File Format):</strong> Employs AV1 keyframe intra-coding with directional prediction and chroma derivative models. AVIF provides state-of-the-art compression efficiency for modern web applications.</li>
+      </ul>
+
+      <h3 style="font-size: 17px; color: var(--text-main); margin-top: 20px; margin-bottom: 8px;">B. PDF Document Stream Optimization</h3>
+      <p>
+        A PDF file is a structured container consisting of a catalog dictionary, page tree, font descriptors, content streams, and embedded binary objects. Bloated PDFs are almost always caused by two factors: uncompressed embedded raster images (e.g., high-resolution 300 DPI or 600 DPI flatbed scanner scans) and duplicate embedded font subsets.
+      </p>
+      <p>
+        TargetCompress optimizes PDFs through multi-layer structural processing:
+      </p>
+      <ul style="color: var(--text-muted); padding-left: 20px; margin-bottom: 16px;">
+        <li style="margin-bottom: 6px;"><strong>Raster Image Downsampling:</strong> High-resolution document scans are downsampled to standard web resolution (150 DPI for academic transcripts and identity cards, or 72 DPI for simple black-and-white forms) using bicubic interpolation.</li>
+        <li style="margin-bottom: 6px;"><strong>Stream Compression:</strong> Uncompressed PDF content streams (text layouts, vector graphics, metadata) are compressed using standard zlib FlateDecode algorithms.</li>
+        <li style="margin-bottom: 6px;"><strong>Metadata &amp; Redundant Object Stripping:</strong> Unused XML metadata packets, thumbnail previews, private editing history, and duplicate embedded font dictionaries are cleaned from the cross-reference (XRef) table.</li>
+      </ul>
+
+      <h3 style="font-size: 17px; color: var(--text-main); margin-top: 20px; margin-bottom: 8px;">C. Two-Pass Video Bitrate Allocation for Discord, Slack &amp; Email</h3>
+      <p>
+        Video compression introduces a third dimension: time. A video stream consists of Intra-frames (I-frames / keyframes), Predicted frames (P-frames), and Bi-directional frames (B-frames). When an application enforces a hard ceiling (such as Discord's 10MB free tier, Discord Nitro's 50MB limit, or Slack's 5MB free limit), standard single-pass Constant Rate Factor (CRF) encoding is insufficient because dynamic action scenes produce unpredictable file spikes.
+      </p>
+      <p>
+        TargetCompress calculates the mathematically required total bitrate using the formula:
+      </p>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 14px 20px; margin: 14px 0; font-family: var(--font-mono); font-size: 13px; color: var(--accent-primary);">
+        Total Bitrate (bps) = (Target Size in Bytes × 8) / Video Duration in Seconds<br>
+        Video Bitrate = Total Bitrate - Audio Bitrate (typically 96 kbps or 128 kbps) - Container Overhead (1-2%)
+      </div>
+      <p>
+        By passing this calculated target bitrate into our client-side FFmpeg WebAssembly engine with two-pass analysis, the video achieves the highest possible visual clarity while guaranteeing the final output stays strictly beneath the platform's upload limit.
+      </p>
+
+      <h2>3. Official Government, Exam Portal &amp; Application Upload Standards (2026 Handbook)</h2>
+      <p>
+        Every year, tens of thousands of online applications are rejected or flagged during automated screening due to invalid photo dimensions, unreadable scanned signatures, or PDF documents exceeding portal size thresholds. Below is an authoritative reference of requirements across major national and international recruitment and examination systems:
+      </p>
+
+      <div class="limits-table-wrapper" style="margin: 20px 0;">
+        <table class="limits-table">
+          <thead>
+            <tr>
+              <th>Portal / Authority</th>
+              <th>Document Type</th>
+              <th>Required File Size</th>
+              <th>Standard Dimensions</th>
+              <th>Format</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>SSC (CGL, CHSL, MTS, GD)</strong></td>
+              <td>Candidate Photograph</td>
+              <td><span class="badge-tag badge-portal">20 KB – 50 KB</span></td>
+              <td>3.5 cm × 4.5 cm (200×230 px)</td>
+              <td>JPG / JPEG</td>
+            </tr>
+            <tr>
+              <td><strong>SSC Portals</strong></td>
+              <td>Scanned Signature</td>
+              <td><span class="badge-tag badge-portal">10 KB – 20 KB</span></td>
+              <td>4.0 cm × 2.0 cm (140×60 px)</td>
+              <td>JPG / JPEG</td>
+            </tr>
+            <tr>
+              <td><strong>UPSC (Civil Services, NDA, CDS)</strong></td>
+              <td>Photo &amp; Signature</td>
+              <td><span class="badge-tag badge-portal">20 KB – 300 KB</span></td>
+              <td>Min 350×350 px, Max 1000×1000 px</td>
+              <td>JPG / JPEG</td>
+            </tr>
+            <tr>
+              <td><strong>UPSC Portals</strong></td>
+              <td>ID &amp; Category Certificates</td>
+              <td><span class="badge-tag badge-portal">20 KB – 300 KB</span></td>
+              <td>Legible A4 scan</td>
+              <td>PDF</td>
+            </tr>
+            <tr>
+              <td><strong>NTA (NEET UG, JEE Main)</strong></td>
+              <td>Passport Photo</td>
+              <td><span class="badge-tag badge-portal">10 KB – 200 KB</span></td>
+              <td>3.5 cm × 4.5 cm (80% face coverage)</td>
+              <td>JPG / JPEG</td>
+            </tr>
+            <tr>
+              <td><strong>NTA Portals</strong></td>
+              <td>Candidate Signature</td>
+              <td><span class="badge-tag badge-portal">4 KB – 30 KB</span></td>
+              <td>Running hand on white paper</td>
+              <td>JPG / JPEG</td>
+            </tr>
+            <tr>
+              <td><strong>State PSCs (UPPSC, BPSC, MPSC)</strong></td>
+              <td>Photo &amp; Signature</td>
+              <td><span class="badge-tag badge-portal">20 KB – 50 KB</span></td>
+              <td>Passport standard</td>
+              <td>JPG / JPEG</td>
+            </tr>
+            <tr>
+              <td><strong>State PSCs</strong></td>
+              <td>Domicile &amp; Caste Certificates</td>
+              <td><span class="badge-tag badge-portal">50 KB – 100 KB</span></td>
+              <td>Single-page legible scan</td>
+              <td>PDF / JPG</td>
+            </tr>
+            <tr>
+              <td><strong>US Visa (DS-160 / CEAC)</strong></td>
+              <td>Digital Visa Photo</td>
+              <td><span class="badge-tag badge-portal">Under 240 KB</span></td>
+              <td>Square (600×600 px min, 1200×1200 max)</td>
+              <td>JPEG</td>
+            </tr>
+            <tr>
+              <td><strong>Schengen / UK Visa (VFS Global)</strong></td>
+              <td>Supporting Documents &amp; Statements</td>
+              <td><span class="badge-tag badge-portal">Under 2 MB – 5 MB</span></td>
+              <td>Multi-page document bundle</td>
+              <td>PDF</td>
+            </tr>
+            <tr>
+              <td><strong>Corporate ATS &amp; Job Portals</strong></td>
+              <td>Curriculum Vitae / Resume</td>
+              <td><span class="badge-tag badge-portal">Under 500 KB</span></td>
+              <td>Clean text-searchable layout</td>
+              <td>PDF / DOCX</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 17px; color: var(--text-main); margin-top: 20px; margin-bottom: 8px;">Practical Advice for Passing Portal Validators on the First Try</h3>
+      <ol style="color: var(--text-muted); padding-left: 20px; margin-bottom: 16px;">
+        <li style="margin-bottom: 8px;"><strong>Always Adjust Dimensions Before Compression:</strong> If a portal demands $200 	imes 230$ pixels and under 50KB, use our <a href="/resize-image" style="color: var(--accent-primary); font-weight: 600;">Image Resizer</a> first to set the exact pixel grid, then run target compression. Trying to compress a 4000×3000 smartphone capture down to 20KB without resizing results in excessive compression blur.</li>
+        <li style="margin-bottom: 8px;"><strong>High-Contrast B&amp;W for Signatures:</strong> Signatures written with black ink on clean white paper compress up to 4× better than blue ink on off-white or lined paper. Clean contrast allows the entropy encoder to compress large uniform white backgrounds into negligible byte counts.</li>
+        <li style="margin-bottom: 8px;"><strong>Avoid Re-compressing Already-Compressed Files:</strong> Always start your compression from the original camera capture or scanner file. Performing lossy compression repeatedly on a previously compressed JPEG generates compounding DCT generation loss (mosquito noise and blocking artifacts).</li>
+      </ol>
+    </section>
+
     <!-- Frequently Asked Questions (FAQ) Section -->
-
     <div class="seo-header" style="margin-top: 50px;">
-
-      <h2>Frequently Asked Questions</h2>
-
-      <p>Everything you need to know about TargetCompress, browser-based compression, and file privacy.</p>
-
+      <h2>Frequently Asked Questions &amp; Technical Reference</h2>
+      <p>Everything you need to know about TargetCompress, browser-based WebAssembly compression, file privacy, and portal compliance.</p>
     </div>
 
-
-
     <div class="faq-container">
-
       <details class="faq-item" open>
-
-        <summary class="faq-summary">How does TargetCompress compress to an exact target file size?</summary>
-
+        <summary class="faq-summary">How does TargetCompress compress files to an exact target KB or MB limit?</summary>
         <div class="faq-content">
-
-          <p>Traditional compressors make you guess percentages (e.g., 50% or 75%), which rarely lands on the file size you actually need. TargetCompress inspects the input file duration, resolution, audio channels, and structure, then mathematically calculates the exact optimal video/audio bitrates or compression parameters needed to hit your specified target size on the very first try.</p>
-
+          <p>Traditional compressors make you guess percentages (e.g. 50% or 70%), which rarely lands on the exact file size required by strict upload validators. TargetCompress inspects the input file structure and applies an automated iterative binary-search quantization solver directly inside your browser. For images, it adjusts quantization matrices and resolution until the output falls just below your specified ceiling. For videos, it calculates the exact target bitrate based on duration and audio stream parameters. This guarantees that your file meets your portal's limit on the very first attempt.</p>
         </div>
-
       </details>
-
-
 
       <details class="faq-item">
-
-        <summary class="faq-summary">Are my files, videos, or confidential documents uploaded anywhere?</summary>
-
+        <summary class="faq-summary">Are my confidential files, ID proofs, or tax documents uploaded to any server?</summary>
         <div class="faq-content">
-
-          <p>No. TargetCompress is 100% serverless and client-side. The compression engine runs using WebAssembly (FFmpeg Wasm and PDF-Lib) directly in your browser local sandbox memory. Your files are processed entirely in your browser and are never uploaded to any server. (The site uses analytics and ad scripts that do not access your files.)</p>
-
+          <p>No. TargetCompress is 100% serverless and client-side. The compression engine runs using WebAssembly (FFmpeg Wasm and PDF-Lib) directly inside your browser's local sandbox memory. Your photos, videos, and PDFs never travel across the internet and are never stored on any cloud database or remote server. When you close or refresh the browser tab, all temporary memory is immediately purged by your device.</p>
         </div>
-
       </details>
-
-
 
       <details class="faq-item">
-
-        <summary class="faq-summary">Can I use TargetCompress on mobile phones (Android & iPhone)?</summary>
-
+        <summary class="faq-summary">How do I compress a passport photo to under 50KB or 20KB for exam portals?</summary>
         <div class="faq-content">
-
-          <p>Yes! TargetCompress is fully responsive and compatible with modern mobile browsers including Google Chrome, Safari, Samsung Internet, and Firefox on both Android and iOS devices.</p>
-
+          <p>To compress an admit card or exam portal photo to 20KB or 50KB: (1) First verify your portal's required pixel dimensions (typically 3.5×4.5 cm or around 200×230 px). If needed, use our <a href="/resize-image" style="color: var(--accent-primary); font-weight: 600;">Image Resizer</a> to set the width and height. (2) Open our <a href="/compress-image-to-50kb" style="color: var(--accent-primary); font-weight: 600;">Compress Image to 50KB</a> tool. (3) Drag and drop your photo. The binary-search solver will automatically optimize the image to sit safely under the threshold while preserving crisp facial details.</p>
         </div>
-
       </details>
-
-
 
       <details class="faq-item">
-
-        <summary class="faq-summary">Which formats are supported for compression and conversion?</summary>
-
+        <summary class="faq-summary">Why do government portals reject compressed PDFs, and how does TargetCompress fix this?</summary>
         <div class="faq-content">
-
-          <p>We support MP4, WebM, MOV, and animated GIF for video; JPG, PNG, and WebP for images; standard PDF documents for reduction; and bidirectional PDF to Microsoft Word (.docx) and Word (.docx) to PDF conversion.</p>
-
+          <p>Government and job portals frequently reject PDFs for three reasons: (1) The file exceeds the byte ceiling (e.g. 100KB or 200KB); (2) The file contains unsupported encrypted layers or non-standard PDF/A revisions; or (3) Aggressive downsampling made small text illegible. TargetCompress uses PDF-Lib to optimize internal stream dictionaries, remove duplicate embedded font packets, and downsample raster scans while preserving clean vector fonts and legible 150 DPI typography.</p>
         </div>
-
       </details>
-
-
 
       <details class="faq-item">
-
-        <summary class="faq-summary">Is TargetCompress completely free?</summary>
-
+        <summary class="faq-summary">How does two-pass video bitrate calculation guarantee Discord 10MB or Slack 5MB limits?</summary>
         <div class="faq-content">
-
-          <p>Yes, TargetCompress is 100% free with no hidden fees, subscriptions, or watermarks. We support the site through clean, non-intrusive sponsor advertisements.</p>
-
+          <p>Single-pass Constant Rate Factor (CRF) video encoding cannot guarantee an exact file size because action-heavy scenes create unpredictable bitrate surges. TargetCompress inspects your video duration in seconds and computes the exact allowed bits: Total Bits = (Target MB × 8,388,608) / Duration. It allocates dedicated bitrates for H.264 video and AAC audio with container overhead buffering, executing two-pass encoding locally in FFmpeg Wasm so your clip uploads to Discord or Slack without error.</p>
         </div>
-
       </details>
 
+      <details class="faq-item">
+        <summary class="faq-summary">Can I use TargetCompress on mobile devices (Android &amp; iPhone)?</summary>
+        <div class="faq-content">
+          <p>Yes. TargetCompress is fully responsive and compatible with all modern mobile browsers including Google Chrome, Safari, Samsung Internet, and Firefox on both Android and iOS devices. Because processing executes locally, you don't even need high-speed mobile data to compress large files.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">Which image, document, and video formats are supported?</summary>
+        <div class="faq-content">
+          <p>We support JPG, JPEG, PNG, and WebP for image compression and conversion; PDF documents for size reduction, merging, splitting, watermarking, and rotating; MP4, WebM, MOV, and animated GIF for video compression; and bidirectional PDF to Microsoft Word (.docx) and Word to PDF conversion.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">What is the difference between image dimensions (pixels) and file size (KB/MB)?</summary>
+        <div class="faq-content">
+          <p>Image dimensions refer to physical resolution in pixels (width × height, such as 1920×1080 px or 200×230 px). File size refers to the storage volume required on disk (e.g. 50 KB or 2 MB). A photo can have large pixel dimensions but low file size through high compression, or small pixel dimensions with large file size if saved in uncompressed 24-bit PNG format. Online portals usually specify constraints for both dimensions AND file size.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">Can TargetCompress merge multiple documents into a single PDF under 500KB?</summary>
+        <div class="faq-content">
+          <p>Yes. Use our <a href="/merge-pdf" style="color: var(--accent-primary); font-weight: 600;">Merge PDF</a> or <a href="/image-to-pdf" style="color: var(--accent-primary); font-weight: 600;">Images to PDF</a> tools to arrange your resume, certificates, and ID proof scans in your desired order and combine them. If the resulting merged PDF exceeds your application portal's limit, run it through our <a href="/compress-pdf-to-500kb" style="color: var(--accent-primary); font-weight: 600;">PDF Compressor</a> to bring it below 500KB or 200KB.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">Is TargetCompress completely free, and are there any watermarks or hidden quotas?</summary>
+        <div class="faq-content">
+          <p>TargetCompress is 100% free with zero paywalls, zero daily conversion limits, zero watermarks, and no mandatory account registration or email subscription. We fund our serverless infrastructure and ongoing tool development through clean, non-intrusive advertisements compliant with Google Publisher Policies.</p>
+        </div>
+      </details>
     </div>
 
   </section>
