@@ -112,45 +112,172 @@
 
     <article class="card" style="padding: clamp(24px, 5vw, 40px); border-radius: 16px; background: var(--bg-surface); border: 1px solid var(--border-subtle); line-height: 1.8;">
       <header style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px; margin-bottom: 24px; background: transparent; position: static; box-shadow: none;">
-        <h1 style="font-size: clamp(24px, 4vw, 34px); font-weight: 800; color: #fff; line-height: 1.25; margin-bottom: 12px;">How to Compress Video for Discord Free (Under 10MB)</h1>
+        <h1 style="font-size: clamp(24px, 4vw, 34px); font-weight: 800; color: var(--text-main); line-height: 1.25; margin-bottom: 12px;">How to Compress Video to 10MB or 25MB for Discord, Slack & Email</h1>
         <div style="display: flex; gap: 16px; font-size: 13px; color: var(--text-sub); flex-wrap: wrap;">
-          <span>📅 September 2026</span>
-          <span>⏱️ 4 min read</span>
+          <span>📅 October 2026</span>
+          <span>⏱️ 8 min read</span>
           <span>🔒 Verified 100% In-Browser</span>
+          <span>✍️ TargetCompress Editorial Team</span>
         </div>
       </header>
 
-      <div class="guide-body" style="font-size: 15px; color: #cbd5e1;">
+      <div class="guide-body" style="font-size: 15.5px; color: var(--text-muted); line-height: 1.8;">
+        <p class="lead" style="font-size: 17px; font-weight: 500; color: var(--text-main); line-height: 1.6; margin-bottom: 24px;">Modern smartphones and screen recorders capture 1080p and 4K footage at high bitrates, producing 100MB to 500MB clips in just a few minutes. When you attempt to share these videos on Discord (capped at 10MB on free tiers), Slack (5MB free limit), or email attachments (25MB Gmail/Outlook limit), you are blocked by upload rejections. Here is an authoritative guide explaining how two-pass video bitrate mathematics and client-side WebAssembly FFmpeg compress videos strictly below 10MB or 25MB without uploading your footage to remote cloud servers.</p>
         
-        <p class="lead">Discord users without a paid Nitro subscription are restricted to a <strong>10 MB file upload limit</strong>. If your clip is 10.1 MB, Discord outright rejects it with an error. Here is how to compress any gameplay clip or screen recording to strictly under 10MB on the first try.</p>
-
-        <h2>The Math of 10MB Video Compression</h2>
-        <p>Online video compressors make you guess percentage sliders (like 50% or 70%). This is fundamentally flawed because video file size is strictly determined by math:</p>
-        <div style="background: rgba(0,210,255,0.08); border: 1px solid rgba(0,210,255,0.25); padding: 16px; border-radius: 8px; margin: 18px 0; font-family: var(--font-mono); font-size: 13px;">
-          <strong>Target Video Bitrate (kbps) = [ (Target File Size in MB &times; 8192) / Duration in Seconds ] &minus; Audio Bitrate</strong>
+        <h2>Platform Video Upload Ceilings: Discord, Slack, and Email Limits</h2>
+        <p>
+          Every major communication platform enforces strict bandwidth ceilings on multimedia attachments to control content delivery network (CDN) storage and bandwidth costs:
+        </p>
+        <div class="limits-table-wrapper" style="margin: 20px 0;">
+          <table class="limits-table">
+            <thead>
+              <tr>
+                <th>Platform / Service</th>
+                <th>Free Tier File Limit</th>
+                <th>Premium Tier Limit</th>
+                <th>Common Failure Symptom</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Discord (Free Tier)</strong></td>
+                <td><strong>10 MB</strong> (previously 8MB)</td>
+                <td>500 MB (Discord Nitro)</td>
+                <td><em>"Your file is too powerful! Max file size is 10.00MB"</em></td>
+              </tr>
+              <tr>
+                <td><strong>Slack (Free Workspaces)</strong></td>
+                <td><strong>5 MB</strong> per file</td>
+                <td>1 GB (Pro / Business+)</td>
+                <td>Upload fails silently or displays storage limit warning.</td>
+              </tr>
+              <tr>
+                <td><strong>Gmail &amp; Google Workspace</strong></td>
+                <td><strong>25 MB</strong> total attachment</td>
+                <td>Google Drive link fallback</td>
+                <td>Forces upload into Google Drive, breaking direct playback.</td>
+              </tr>
+              <tr>
+                <td><strong>Outlook &amp; Office 365</strong></td>
+                <td><strong>20 MB – 25 MB</strong></td>
+                <td>OneDrive attachment</td>
+                <td>Blocks send action with attachment size error.</td>
+              </tr>
+              <tr>
+                <td><strong>WhatsApp (Documents)</strong></td>
+                <td><strong>16 MB</strong> (Media), 100MB (Docs)</td>
+                <td>2 GB (Document mode)</td>
+                <td>Applies aggressive, blurry internal video re-compression.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <p>For example, to fit a 60-second video into 9.6 MB (leaving a safety margin for Discord) with 128 kbps audio:</p>
-        <p><code>Target Video Bitrate = [(9.6 &times; 8192) / 60] &minus; 128 = 1,182 kbps</code></p>
-        <p>TargetCompress performs this exact two-pass calculation automatically in WebAssembly FFmpeg, ensuring your output file never exceeds 10MB.</p>
 
-        <h2>How to Compress Videos for Discord Free</h2>
-        <ol>
-          <li>Go to <a href="/compress-video-to-10mb">Compress Video to 10MB</a>.</li>
-          <li>Upload your MP4, MOV, WebM, or MKV file.</li>
-          <li>Select the <strong>Discord Free (10 MB Cap)</strong> preset.</li>
-          <li>Optional: Use our interactive trim slider to cut off dead intro/outro seconds. Shorter clips allow higher visual bitrates!</li>
-          <li>Click Compress. FFmpeg.wasm encodes the video directly on your computer's hardware.</li>
-          <li>Share directly in Discord chat channels with zero Nitro required.</li>
+        <h2>The Mathematics of Video Bitrate: Why Single-Pass CRF Encoding Fails</h2>
+        <p>
+          Most free video converters ask you to select a "Quality level" or rely on single-pass Constant Rate Factor (CRF) encoding (such as CRF 23 or CRF 28).
+        </p>
+        <p>
+          <strong>CRF cannot guarantee an exact target file size.</strong> CRF operates by maintaining a constant visual quality level throughout the video. If your video is a talking head clip with a static background, CRF produces a tiny file. If your video is high-action gameplay footage (such as Valorant, Fortnite, or Rocket League) with rapid camera movement, explosions, and particle effects, CRF will generate massive bitrate surges, resulting in a 14MB file that Discord rejects!
+        </p>
+        <p>
+          To guarantee that a clip lands strictly under 10MB or 25MB, TargetCompress applies <strong>two-pass variable bitrate (VBR) mathematics</strong>:
+        </p>
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 18px 22px; margin: 18px 0; font-family: var(--font-mono); font-size: 13.5px; color: var(--accent-primary); line-height: 1.6;">
+          Total Allowed Bits = Target Size in Megabytes × 8,388,608 bits<br>
+          Total Bitrate (bps) = Total Allowed Bits / Duration in Seconds<br>
+          Target Video Bitrate = Total Bitrate - Audio Bitrate (128 kbps) - Container Overhead (2%)
+        </div>
+        <p>
+          For example, if you have a 45-second gaming clip that must fit under 10MB:
+        </p>
+        <ul style="color: var(--text-muted); padding-left: 20px; margin-bottom: 16px;">
+          <li>Total bits available: $10 	imes 8,388,608 = 83,886,080	ext{ bits}$.</li>
+          <li>Total bitrate ceiling: $83,886,080 / 45	ext{ seconds} pprox 1,864	ext{ kbps}$.</li>
+          <li>Subtracting 128 kbps for clean stereo AAC audio and 2% MP4 container overhead yields a target video bitrate of approximately <strong>1,700 kbps</strong>.</li>
+        </ul>
+        <p>
+          Our WebAssembly FFmpeg engine encodes the video using these exact parameters, ensuring the final output sits safely between 9.5MB and 9.8MB—maximizing visual fidelity while guaranteeing Discord will accept it on the first attempt.
+        </p>
+
+        <h2>Step-by-Step Tutorial: Compressing Video for Discord &amp; Slack</h2>
+        <ol style="color: var(--text-muted); padding-left: 20px; margin-bottom: 18px;">
+          <li style="margin-bottom: 10px;"><strong>Launch the Tool:</strong> Open <a href="/compress-video-to-10mb" style="color: var(--accent-primary); font-weight: 600;">TargetCompress Video to 10MB</a> (or <a href="/compress-video-to-25mb" style="color: var(--accent-primary); font-weight: 600;">Video to 25MB</a> for email).</li>
+          <li style="margin-bottom: 10px;"><strong>Drop Your Video:</strong> Select your MP4, MOV, or WebM video file.</li>
+          <li style="margin-bottom: 10px;"><strong>Optional Trimming:</strong> Use our integrated video timeline trimmer to trim dead intro frames or silence from the beginning and end. Removing 10 seconds of unneeded footage increases the bitrate available for the rest of your clip!</li>
+          <li style="margin-bottom: 10px;"><strong>Run In-Browser Compression:</strong> Tap <strong>Compress Video Below Target</strong>. FFmpeg compiled to WebAssembly executes multi-threaded H.264 encoding directly in your browser.</li>
+          <li style="margin-bottom: 10px;"><strong>Download &amp; Share:</strong> Download your compressed MP4. It is immediately ready to drag and drop into Discord or Slack.</li>
         </ol>
+
+        <h2>Frequently Asked Questions (Video Compression)</h2>
+        <div class="faq-container" style="margin-top: 14px;">
+          <details class="faq-item" open>
+            <summary class="faq-summary">Why does video compression take longer than image compression?</summary>
+            <div class="faq-content"><p>A 30-second video at 30 frames per second contains 900 individual frames. To compress it, FFmpeg must decode, motion-compensate, transform, and encode 900 frames in sequence. Because processing happens locally on your computer or phone's CPU rather than on a remote server farm, conversion speed depends on your device's core count. Modern laptops typically encode 60 seconds of video in 20–40 seconds.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-summary">Are my confidential video recordings uploaded anywhere?</summary>
+            <div class="faq-content"><p>Never. TargetCompress executes 100% locally via client-side WebAssembly FFmpeg. Your personal recordings, gaming highlights, and webcam videos never leave your computer's RAM.</p></div>
+          </details>
+        </div>
         
+      
+        <h3 style="color: var(--text-main); font-size: 20px; margin-top: 32px; margin-bottom: 14px;">The Exact Mathematical Bitrate Formula for 10MB Video Caps</h3>
+        <p>To guarantee that a video file never breaches a 10MB ceiling (such as Discord free tier, WhatsApp attachments, or Slack channel limits), compression cannot rely on vague presets like "medium quality" or "70% compression". It requires calculating total bitrate based on container duration:</p>
+        <p style="background: var(--bg-surface); border-left: 3px solid var(--accent-primary); padding: 14px 18px; font-family: monospace; font-size: 14px; margin: 16px 0;">
+          Target Total Bitrate (kbps) = (Target Size in Kilobits) / Duration in Seconds<br><br>
+          For 10 MB = 10 &times; 8,192 kilobits = 81,920 kilobits.<br>
+          Safe Allocation (with 5% container overhead) = 77,824 kilobits.<br><br>
+          Video Bitrate = (77,824 / Duration) - Audio Bitrate
+        </p>
+        <p>For example, if your smartphone clip is 60 seconds long and you encode audio at a standard high-clarity 128 kbps stereo AAC rate:</p>
+        <p style="font-family: monospace; font-size: 14px; padding-left: 12px;">
+          Video Bitrate = (77,824 / 60) - 128 = 1,297 - 128 = <strong>1,169 kbps</strong>.
+        </p>
+        <p>At 1,169 kbps with modern H.264 / AVC or H.265 / HEVC encoding, a 720p or 1080p video retains crisp motion vectors, fluid 30 frames per second playback, and crystal-clear audio while remaining securely within the 9.8MB safe zone.</p>
+
+        <h3 style="color: var(--text-main); font-size: 20px; margin-top: 32px; margin-bottom: 14px;">Platform Video Size Limits Comparison</h3>
+        <div style="overflow-x: auto; margin: 20px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14.5px; border: 1px solid var(--border-subtle); background: var(--bg-surface);">
+            <thead>
+              <tr style="background: rgba(255,255,255,0.03); border-bottom: 2px solid var(--border-subtle);">
+                <th style="padding: 12px; text-align: left; color: var(--text-main);">Platform / Service</th>
+                <th style="padding: 12px; text-align: left; color: var(--text-main);">Maximum Free File Limit</th>
+                <th style="padding: 12px; text-align: left; color: var(--text-main);">Recommended Resolution</th>
+                <th style="padding: 12px; text-align: left; color: var(--text-main);">Container Format</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-subtle);">
+                <td style="padding: 12px; font-weight: 600;">Discord (Free Tier)</td>
+                <td style="padding: 12px; color: var(--accent-primary);">10 MB (previously 8 MB)</td>
+                <td style="padding: 12px;">720p (1280 &times; 720) or 1080p</td>
+                <td style="padding: 12px;">MP4 / WebM</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-subtle);">
+                <td style="padding: 12px; font-weight: 600;">WhatsApp Messenger</td>
+                <td style="padding: 12px; color: var(--accent-primary);">16 MB (Media) / 2 GB (Doc)</td>
+                <td style="padding: 12px;">720p (1280 &times; 720)</td>
+                <td style="padding: 12px;">MP4 (H.264 + AAC)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-subtle);">
+                <td style="padding: 12px; font-weight: 600;">Email (Gmail / Outlook)</td>
+                <td style="padding: 12px; color: var(--accent-primary);">25 MB (Gmail) / 20 MB (Outlook)</td>
+                <td style="padding: 12px;">720p</td>
+                <td style="padding: 12px;">MP4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    
       </div>
 
-      <div style="margin: 40px 0 20px; text-align: center; background: rgba(88,101,242,0.12); border: 1px solid rgba(88,101,242,0.3); border-radius: 12px; padding: 28px;">
-        <h3 style="color: #fff; font-size: 20px; margin-bottom: 8px;">Ready to compress your file?</h3>
-        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 18px;">Process your images or documents strictly to target size directly in your browser. Zero uploads.</p>
-        <a href="/compress-video-to-10mb" class="btn btn-primary btn-large" style="text-decoration: none; display: inline-flex; font-weight: 700;">Compress Video to 10MB Now ➔</a>
+      <div style="margin: 40px 0 20px; text-align: center; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25); border-radius: 12px; padding: 28px;">
+        <h3 style="color: var(--text-main); font-size: 20px; margin-bottom: 8px;">Ready to optimize your files?</h3>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 18px;">Compress your images, PDFs, or videos strictly to your required target size directly in your browser. Zero server uploads.</p>
+        <a href="/" class="btn btn-primary btn-large" style="text-decoration: none; display: inline-flex; font-weight: 700;">Launch Free TargetCompress Suite ➔</a>
       </div>
-    </article>
+</article>
   </main>
 
   <footer class="site-footer">

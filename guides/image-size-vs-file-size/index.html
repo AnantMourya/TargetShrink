@@ -112,41 +112,140 @@
 
     <article class="card" style="padding: clamp(24px, 5vw, 40px); border-radius: 16px; background: var(--bg-surface); border: 1px solid var(--border-subtle); line-height: 1.8;">
       <header style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px; margin-bottom: 24px; background: transparent; position: static; box-shadow: none;">
-        <h1 style="font-size: clamp(24px, 4vw, 34px); font-weight: 800; color: #fff; line-height: 1.25; margin-bottom: 12px;">Image Dimensions vs File Size: Explained Simply</h1>
+        <h1 style="font-size: clamp(24px, 4vw, 34px); font-weight: 800; color: var(--text-main); line-height: 1.25; margin-bottom: 12px;">Image Dimensions vs File Size: Understanding Resolution, DPI & KB</h1>
         <div style="display: flex; gap: 16px; font-size: 13px; color: var(--text-sub); flex-wrap: wrap;">
-          <span>📅 September 2026</span>
-          <span>⏱️ 4 min read</span>
+          <span>📅 October 2026</span>
+          <span>⏱️ 8 min read</span>
           <span>🔒 Verified 100% In-Browser</span>
+          <span>✍️ TargetCompress Editorial Team</span>
         </div>
       </header>
 
-      <div class="guide-body" style="font-size: 15px; color: #cbd5e1;">
+      <div class="guide-body" style="font-size: 15.5px; color: var(--text-muted); line-height: 1.8;">
+        <p class="lead" style="font-size: 17px; font-weight: 500; color: var(--text-main); line-height: 1.6; margin-bottom: 24px;">One of the most pervasive confusions in digital media and online application forms is the difference between image dimensions (pixels, width × height) and image file size (kilobytes, megabytes). Users frequently ask: 'My image is 1920×1080 pixels, so why is it only 200KB?' or 'I changed the DPI to 300, why didn't my file size increase?' Here is an authoritative, complete guide demystifying resolution, raw pixel bit depth, DPI myths, and file size optimization.</p>
         
-        <p class="lead">When filling out online application forms, you will often see two conflicting requirements: <em>"Image must be 200 &times; 230 pixels"</em> AND <em>"File size must be under 50 KB"</em>. What is the difference between these two metrics, and how do you satisfy both simultaneously?</p>
+        <h2>The Core Distinction: Dimensions (Pixels) vs. File Size (Bytes)</h2>
+        <p>
+          To understand digital images, you must separate physical geometric resolution from storage footprint:
+        </p>
+        <div class="limits-table-wrapper" style="margin: 20px 0;">
+          <table class="limits-table">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Image Dimensions (Resolution)</th>
+                <th>File Size (Storage Volume)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>What It Measures</strong></td>
+                <td>The physical grid of color pixels making up the image.</td>
+                <td>The volume of digital storage required on disk or in memory.</td>
+              </tr>
+              <tr>
+                <td><strong>Standard Units</strong></td>
+                <td>Pixels (px), Megapixels (MP), or print units (inches / cm).</td>
+                <td>Bytes (B), Kilobytes (KB), Megabytes (MB), Gigabytes (GB).</td>
+              </tr>
+              <tr>
+                <td><strong>Example</strong></td>
+                <td>$1920 	imes 1080	ext{ pixels}$ (Full HD) or $200 	imes 230	ext{ px}$.</td>
+                <td>$45.2	ext{ KB}$ or $3.8	ext{ MB}$.</td>
+              </tr>
+              <tr>
+                <td><strong>Analogy</strong></td>
+                <td>The size and dimensions of a physical shipping box.</td>
+                <td>The weight of the contents inside the box.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        <h2>1. Image Dimensions (Resolution in Pixels)</h2>
-        <p><strong>Dimensions</strong> refer to the physical width and height of an image measured in pixels (px) or centimeters/inches (at a given DPI). For example, a standard passport photo is <strong>350 pixels wide by 450 pixels tall</strong> (3.5cm &times; 4.5cm at ~300 DPI). Dimensions determine the shape and proportion of your photo on screen.</p>
-
-        <h2>2. File Size (Storage Weight in KB / MB)</h2>
-        <p><strong>File size</strong> measures how much digital data storage space the file occupies on a hard drive or server, measured in kilobytes (KB) or megabytes (MB). 1 MB = 1,024 KB. File size is determined by how heavily the raw pixel data is compressed using algorithms like JPEG, PNG, or WebP.</p>
-
-        <h2>How They Relate</h2>
-        <p>A high-dimension image (e.g. 4000 &times; 3000 pixels from a 12MP phone camera) contains 12 million pixels. Even with heavy compression, cramming 12 million pixels under 50KB will result in extreme blurriness. However, if you first <strong>resize the dimensions</strong> down to 600 &times; 800 pixels (480,000 pixels), compressing it to 50KB results in pristine, crystal-clear visual quality.</p>
-
-        <h2>Quick Solution Guide</h2>
-        <ul>
-          <li>If the portal says: <strong>"Width and height do not match requirement"</strong> &rarr; Use our <a href="/resize-image">Image Resizer Tool</a> to set exact pixels.</li>
-          <li>If the portal says: <strong>"File exceeds maximum allowed size"</strong> &rarr; Use our <a href="/compress-image-to-50kb">50KB Image Compressor</a>.</li>
+        <h2>The Raw Pixel Formula: How Many Bytes Are in an Uncompressed Image?</h2>
+        <p>
+          Every digital pixel in a standard full-color photograph is composed of three color channels: Red, Green, and Blue (RGB). In standard 24-bit TrueColor imaging, each color channel is represented by an 8-bit byte ($2^8 = 256$ intensity levels from 0 to 255).
+        </p>
+        <p>
+          Therefore, the raw, uncompressed memory footprint of any image can be calculated using the formula:
+        </p>
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 14px 20px; margin: 14px 0; font-family: var(--font-mono); font-size: 13.5px; color: var(--accent-primary);">
+          Raw Uncompressed Bytes = Width (px) × Height (px) × (Bits per Pixel / 8)<br>
+          For a 24-bit photo: Raw Bytes = Width × Height × 3 bytes
+        </div>
+        <p>
+          Let's calculate the raw memory for two common images:
+        </p>
+        <ul style="color: var(--text-muted); padding-left: 20px; margin-bottom: 18px;">
+          <li style="margin-bottom: 8px;"><strong>12-Megapixel Smartphone Capture ($4000 	imes 3000	ext{ px}$):</strong><br>
+          $4000 	imes 3000 	imes 3	ext{ bytes} = 36,000,000	ext{ bytes} pprox \mathbf{36	ext{ MB}}$ of raw bitmap data!</li>
+          <li style="margin-bottom: 8px;"><strong>Passport Photo ($350 	imes 450	ext{ px}$):</strong><br>
+          $350 	imes 450 	imes 3	ext{ bytes} = 472,500	ext{ bytes} pprox \mathbf{472.5	ext{ KB}}$ of raw bitmap data.</li>
         </ul>
+        <p>
+          When that 12MP phone capture is saved on your device, it doesn't take 36MB—it takes about 4MB. That reduction is entirely due to <strong>JPEG compression algorithms</strong> (Discrete Cosine Transform, chroma subsampling, and Huffman entropy encoding) which identify and discard visual data imperceptible to human eyes.
+        </p>
+
+        <h2>The Great DPI / PPI Myth: Why DPI Does Not Affect Web File Size</h2>
+        <p>
+          One of the most persistent myths on the internet is that changing an image's DPI (Dots Per Inch) from 72 to 300 will make it higher quality on a website or make its file size explode.
+        </p>
+        <p>
+          <strong>On the web, DPI is completely irrelevant.</strong>
+        </p>
+        <p>
+          DPI is strictly a physical print instruction header. It tells a physical laser or inkjet printer how many pixels to pack into one linear inch of physical paper:
+        </p>
+        <ul style="color: var(--text-muted); padding-left: 20px; margin-bottom: 16px;">
+          <li>A $1200 	imes 1200	ext{ pixel}$ image printed at <strong>300 DPI</strong> produces a $4 	imes 4	ext{ inch}$ print.</li>
+          <li>That same $1200 	imes 1200	ext{ pixel}$ image printed at <strong>100 DPI</strong> produces a $12 	imes 12	ext{ inch}$ print.</li>
+        </ul>
+        <p>
+          In both cases, the image contains exactly $1,440,000$ pixels. A computer screen, iPhone display, or online application portal does not have a physical printer head—it renders pixels on a digital pixel grid. Changing the DPI tag in an image's EXIF header from 72 to 300 changes only 2 bytes of metadata, leaving the image quality and file size 100% identical!
+        </p>
+
+        <h2>Why Government Portals Specify BOTH Dimensions AND File Size</h2>
+        <p>
+          Application portals frequently issue guidelines like: <em>"Dimensions: 200×230 pixels. File size: 20KB to 50KB."</em>
+        </p>
+        <p>
+          Why do they constrain both?
+        </p>
+        <ul style="color: var(--text-muted); padding-left: 20px; margin-bottom: 16px;">
+          <li style="margin-bottom: 8px;"><strong>Fixed Dimensions (Pixels) Prevent Layout Breakage:</strong> The portal's admit card generation template has a dedicated rectangular photo slot measuring exactly $200 	imes 230$ pixels. If you upload a square 1000×1000 photo, the template will either distort your facial aspect ratio or crop out your forehead.</li>
+          <li style="margin-bottom: 8px;"><strong>Fixed File Size (KB) Prevents Database Overload:</strong> Limiting files to under 50KB ensures millions of candidate records can be stored and backed up efficiently across government servers.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions (Dimensions vs File Size)</h2>
+        <div class="faq-container" style="margin-top: 14px;">
+          <details class="faq-item" open>
+            <summary class="faq-summary">How do I change image dimensions without changing the file size?</summary>
+            <div class="faq-content"><p>Changing dimensions always impacts file size because you are adding or removing pixels. However, by using our <a href="/resize-image" style="color: var(--accent-primary); font-weight: 600;">Image Resizer</a> to set exact dimensions, and then running our <a href="/compress-image-to-50kb" style="color: var(--accent-primary); font-weight: 600;">50KB Compressor</a>, you can ensure your image satisfies both constraints simultaneously.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-summary">Why is PNG file size so much larger than JPEG for photographs?</summary>
+            <div class="faq-content"><p>PNG is a lossless format designed for graphics with flat colors (logos, icons, screenshots). It preserves every single pixel perfectly using DEFLATE compression. Photographs contain millions of subtle color gradients that defeat lossless compression, causing photographic PNGs to weigh 5× to 10× more than equivalent JPEGs.</p></div>
+          </details>
+        </div>
         
+      
+        <h3 style="color: var(--text-main); font-size: 20px; margin-top: 32px; margin-bottom: 14px;">Mobile Browser Memory Architecture: Decoded Bitmaps vs File Size</h3>
+        <p>A frequent point of confusion among web developers and mobile designers is why a website crashes on budget smartphones even though all hero images are compressed to under 100KB on disk. The answer lies in the distinction between storage size and memory allocation:</p>
+        <p>When an operating system or web browser downloads a 100KB JPEG that measures $6000 	imes 4000	ext{ pixels}$, it cannot render the compressed JPEG stream directly to the screen. The browser's graphics rendering engine must first decompress the JPEG file into an uncompressed RGBA pixel buffer in RAM. Each pixel consumes 4 bytes of memory (1 byte Red, 1 byte Green, 1 byte Blue, 1 byte Alpha channel):</p>
+        <p style="background: var(--bg-surface); border-left: 3px solid var(--accent-primary); padding: 14px 18px; font-family: monospace; font-size: 14px; margin: 16px 0;">
+          RAM Memory Consumed = Width &times; Height &times; 4 bytes<br>
+          RAM = 6,000 &times; 4,000 &times; 4 = 96,000,000 bytes &approx; <strong>96 MB of RAM!</strong>
+        </p>
+        <p>If a webpage loads five such images, the browser tab must allocate nearly 500MB of device memory simply to display pictures that take up less than 500KB on the server! On mobile devices with tight RAM budgets, this triggers the operating system's Low-Memory Killer, causing the tab to crash or refresh unexpectedly. To ensure optimal performance across devices, always balance file size reduction with sensible pixel dimension downsampling.</p>
+    
       </div>
 
-      <div style="margin: 40px 0 20px; text-align: center; background: rgba(88,101,242,0.12); border: 1px solid rgba(88,101,242,0.3); border-radius: 12px; padding: 28px;">
-        <h3 style="color: #fff; font-size: 20px; margin-bottom: 8px;">Ready to compress your file?</h3>
-        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 18px;">Process your images or documents strictly to target size directly in your browser. Zero uploads.</p>
-        <a href="/resize-image" class="btn btn-primary btn-large" style="text-decoration: none; display: inline-flex; font-weight: 700;">Resize or Compress Images ➔</a>
+      <div style="margin: 40px 0 20px; text-align: center; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25); border-radius: 12px; padding: 28px;">
+        <h3 style="color: var(--text-main); font-size: 20px; margin-bottom: 8px;">Ready to optimize your files?</h3>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 18px;">Compress your images, PDFs, or videos strictly to your required target size directly in your browser. Zero server uploads.</p>
+        <a href="/" class="btn btn-primary btn-large" style="text-decoration: none; display: inline-flex; font-weight: 700;">Launch Free TargetCompress Suite ➔</a>
       </div>
-    </article>
+</article>
   </main>
 
   <footer class="site-footer">

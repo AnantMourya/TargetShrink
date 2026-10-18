@@ -112,50 +112,140 @@
 
     <article class="card" style="padding: clamp(24px, 5vw, 40px); border-radius: 16px; background: var(--bg-surface); border: 1px solid var(--border-subtle); line-height: 1.8;">
       <header style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px; margin-bottom: 24px; background: transparent; position: static; box-shadow: none;">
-        <h1 style="font-size: clamp(24px, 4vw, 34px); font-weight: 800; color: #fff; line-height: 1.25; margin-bottom: 12px;">How to Compress Image to 100KB Online</h1>
+        <h1 style="font-size: clamp(24px, 4vw, 34px); font-weight: 800; color: var(--text-main); line-height: 1.25; margin-bottom: 12px;">How to Compress Images to 100KB for Official Documents & Portals</h1>
         <div style="display: flex; gap: 16px; font-size: 13px; color: var(--text-sub); flex-wrap: wrap;">
-          <span>📅 September 2026</span>
-          <span>⏱️ 3 min read</span>
+          <span>📅 October 2026</span>
+          <span>⏱️ 7 min read</span>
           <span>🔒 Verified 100% In-Browser</span>
+          <span>✍️ TargetCompress Editorial Team</span>
         </div>
       </header>
 
-      <div class="guide-body" style="font-size: 15px; color: #cbd5e1;">
+      <div class="guide-body" style="font-size: 15.5px; color: var(--text-muted); line-height: 1.8;">
+        <p class="lead" style="font-size: 17px; font-weight: 500; color: var(--text-main); line-height: 1.6; margin-bottom: 24px;">While passport photographs are capped at 50KB, supporting identity documents—such as college degree marksheets, caste certificates, disability certificates, government ID cards, and salary slips—are almost universally capped at 100KB. Compressing mixed-content documents (which contain fine printed text, official watermarks, and institutional stamps) down to 100KB without losing readability is challenging. Here is the comprehensive technical guide to achieving perfect 100KB document compression directly in your browser.</p>
         
-        <p class="lead">100KB is the ideal sweet spot for digital imagery. It is large enough to retain crystal-clear 1080p details, but small enough to fit within university admissions portals, job application forms, and fast-loading web pages. Here is the complete guide to compressing any picture to 100KB.</p>
+        <h2>The Unique Challenge of Compressing Documents to 100KB</h2>
+        <p>
+          Compressing a document scan to 100KB is fundamentally different from compressing a portrait photograph. In a portrait, minor softening of skin tones or background gradients is completely acceptable. In a document scan, however, every letter, number, signature stroke, and official seal must remain 100% legible.
+        </p>
+        <p>
+          When documents are compressed incorrectly, three critical failure modes occur:
+        </p>
+        <ul style="color: var(--text-muted); padding-left: 20px; margin-bottom: 18px;">
+          <li style="margin-bottom: 8px;"><strong>Text Ringing &amp; Mosquito Noise:</strong> The JPEG algorithm divides images into 8×8 pixel blocks and applies Discrete Cosine Transforms. Sharp transitions between black printed text and white paper create high-frequency energy. Over-compressing causes ugly buzzing artifacts (mosquito noise) around letters like 'e', 'a', '8', and 'B', making roll numbers and dates illegible.</li>
+          <li style="margin-bottom: 8px;"><strong>DPI Downsampling Blur:</strong> Scanning an A4 marksheet at 300 DPI produces a $2480 	imes 3508$ image (8.7 megapixels) weighing 3MB to 8MB. Slashing the resolution down to 72 DPI blurs small 8pt table text into unreadable smudges.</li>
+          <li style="margin-bottom: 8px;"><strong>Chroma Bleeding on Stamps &amp; Signatures:</strong> Standard JPEG compression applies 4:2:0 chroma subsampling, halving color resolution. This causes red official stamps and blue ink signatures to bleed into adjacent text lines.</li>
+        </ul>
 
-        <h2>Why 100KB is the Industry Standard for Online Portals</h2>
-        <p>While strict government forms cap uploads at 50KB, modern academic institutions, corporate ATS systems, and online banking platforms usually set their ceiling at 100KB to 200KB. At 100KB, images can maintain resolutions up to 1200×1200 pixels, ensuring certificates, seals, and ID photographs remain perfectly legible when printed.</p>
+        <h2>The Optimum Balance: 150 DPI and 4:4:4 / High-Quality Quantization</h2>
+        <p>
+          The secret to compressing scanned documents to under 100KB while preserving razor-sharp text lies in establishing the optimal resolution:
+        </p>
+        <div class="limits-table-wrapper" style="margin: 20px 0;">
+          <table class="limits-table">
+            <thead>
+              <tr>
+                <th>Scan DPI</th>
+                <th>Pixel Dimensions (A4)</th>
+                <th>Raw Size</th>
+                <th>100KB Legibility Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>300 DPI (Archival)</strong></td>
+                <td>$2480 	imes 3508	ext{ px}$</td>
+                <td>5 MB – 8 MB</td>
+                <td>Requires &lt;15% quality; text becomes distorted by DCT blocks.</td>
+              </tr>
+              <tr>
+                <td><strong>150 DPI (Optimal Web)</strong></td>
+                <td>$1240 	imes 1754	ext{ px}$</td>
+                <td>1.2 MB – 2 MB</td>
+                <td style="color: #10b981;"><strong>Optimal:</strong> Compresses to 90–98KB at 75% quality; text is crisp and legible.</td>
+              </tr>
+              <tr>
+                <td><strong>72 DPI (Screen Only)</strong></td>
+                <td>$595 	imes 842	ext{ px}$</td>
+                <td>200 KB – 400 KB</td>
+                <td style="color: #ef4444;">Too low: Small printed footnotes, marks, and signatures become blurred.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          TargetCompress automatically downsamples high-resolution document scans to approximately 150 DPI equivalent ($1200 	imes 1700$ pixels) before executing iterative quantization. This ensures that every line of text, grade percentage, and issuing authority seal remains sharp and legible while the total byte count lands comfortably between 90KB and 98KB.
+        </p>
 
-        <h2>How to Compress to 100KB Step-by-Step</h2>
-        <ol>
-          <li>Open the dedicated <a href="/compress-image-to-100kb">TargetCompress 100KB Tool</a>.</li>
-          <li>Select your JPG, PNG, or WebP picture from your computer or smartphone.</li>
-          <li>TargetCompress automatically configures the target ceiling to 100 KB and selects the most efficient compression matrix.</li>
-          <li>Click Compress to execute in-browser processing in under 0.5 seconds.</li>
-          <li>Review the original vs compressed comparison view and download the result.</li>
+        <h2>Step-by-Step Tutorial: Compressing Scanned Documents to 100KB</h2>
+        <ol style="color: var(--text-muted); padding-left: 20px; margin-bottom: 18px;">
+          <li style="margin-bottom: 10px;"><strong>Navigate to the Tool:</strong> Open <a href="/compress-image-to-100kb" style="color: var(--accent-primary); font-weight: 600;">TargetCompress 100KB Tool</a>.</li>
+          <li style="margin-bottom: 10px;"><strong>Upload Document Scan:</strong> Drag your scanned marksheet, certificate, or identity proof into the dropzone, or tap <em>Browse Local Image</em>.</li>
+          <li style="margin-bottom: 10px;"><strong>Verify Target Threshold:</strong> The target is pre-configured to <strong>100 KB</strong>.</li>
+          <li style="margin-bottom: 10px;"><strong>Run Optimization:</strong> Click <strong>Compress to Exact Target Size</strong>. In under 300ms, our WebAssembly engine optimizes the document locally.</li>
+          <li style="margin-bottom: 10px;"><strong>Inspect &amp; Download:</strong> Review the result banner confirming the file is under 100KB. Tap <strong>Download Compressed Image</strong>.</li>
         </ol>
 
-        <h2>Best Formats for 100KB Target Size</h2>
-        <table class="limits-table" style="margin: 20px 0;">
-          <thead>
-            <tr><th>Format</th><th>Best Used For</th><th>Fidelity at 100KB</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>JPEG (.jpg)</strong></td><td>Photographs, headshots, scanned certificates</td><td>Excellent (95%+ quality)</td></tr>
-            <tr><td><strong>WebP (.webp)</strong></td><td>Modern web assets, blog images</td><td>Near Lossless</td></tr>
-            <tr><td><strong>PNG (.png)</strong></td><td>Digital signatures, transparent logos</td><td>Lossless (for simple graphics)</td></tr>
-          </tbody>
-        </table>
+        <h2>Frequently Asked Questions (100KB Document Compression)</h2>
+        <div class="faq-container" style="margin-top: 14px;">
+          <details class="faq-item" open>
+            <summary class="faq-summary">Will my college marksheet or certificate remain readable at 100KB?</summary>
+            <div class="faq-content"><p>Yes. TargetCompress specifically optimizes document scans by prioritizing high-contrast text edges. At 100KB, a standard single-page certificate or marksheet easily retains full legibility for all numerical grades, roll numbers, and official signatures.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-summary">What should I do if my document is a PDF rather than an image?</summary>
+            <div class="faq-content"><p>If your application portal requires a PDF under 100KB instead of a JPG, use our specialized <a href="/compress-pdf-to-100kb" style="color: var(--accent-primary); font-weight: 600;">Compress PDF to 100KB Tool</a>. It optimizes PDF stream dictionaries and downsamples embedded images while keeping text searchable.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-summary">Are my academic records, salary slips, and ID proofs safe?</summary>
+            <div class="faq-content"><p>TargetCompress is 100% serverless. File processing executes locally inside your web browser's temporary sandbox memory. Your sensitive financial and identity records are never uploaded to any remote server or stored in the cloud.</p></div>
+          </details>
+        </div>
         
+      
+        <h3 style="color: var(--text-main); font-size: 20px; margin-top: 32px; margin-bottom: 14px;">Technical Deep-Dive: Chroma Subsampling and DCT Quantization at 100KB</h3>
+        <p>When compressing high-resolution camera captures (such as 12-megapixel smartphone photos) down to exactly 100KB, understanding the discrete cosine transform (DCT) and chroma subsampling is critical to preventing visible compression artifacts. JPEG algorithms split images into $8 	imes 8$ pixel frequency blocks. In high-frequency regions (fine hair, text edges, fabric textures), human vision is less sensitive to fine detail than in smooth luminance gradients. Most standard web converters aggressively drop high-frequency coefficients across the entire image, resulting in noticeable macroblocking and color bleeding.</p>
+        <p>TargetCompress employs selective 4:2:0 and 4:2:2 chroma subsampling depending on the detected image characteristics. For documents and certificates containing printed text or stamps, our engine preserves luminance contrast (the Y channel) while downsampling only chrominance (Cb and Cr channels). This mathematical separation ensures that text remains sharp, legible, and machine-readable by automated OCR verification systems used by government and recruitment portals, even when operating under strict 100KB constraints.</p>
+        
+        <h3 style="color: var(--text-main); font-size: 20px; margin-top: 32px; margin-bottom: 14px;">Portal Upload Failure Codes &amp; How to Resolve Them</h3>
+        <p>When submitting files to competitive examination portals (such as UPSC, SSC, IBPS, NEET) or visa application centers, users frequently encounter cryptic server errors. Below is a diagnostic troubleshooting matrix:</p>
+        <div style="overflow-x: auto; margin: 20px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14.5px; border: 1px solid var(--border-subtle); background: var(--bg-surface);">
+            <thead>
+              <tr style="background: rgba(255,255,255,0.03); border-bottom: 2px solid var(--border-subtle);">
+                <th style="padding: 12px; text-align: left; color: var(--text-main);">Error Message / Code</th>
+                <th style="padding: 12px; text-align: left; color: var(--text-main);">Technical Root Cause</th>
+                <th style="padding: 12px; text-align: left; color: var(--text-main);">Recommended TargetCompress Fix</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-subtle);">
+                <td style="padding: 12px; color: var(--accent-primary); font-weight: 600;">"File size must be between 50KB and 100KB"</td>
+                <td style="padding: 12px;">Over-compression reduced file to 48KB, failing the minimum gatekeeper validation.</td>
+                <td style="padding: 12px;">Set target to <strong>85KB</strong>. This provides safety margins against binary rounding differences between client and server file systems.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-subtle);">
+                <td style="padding: 12px; color: var(--accent-primary); font-weight: 600;">"Invalid image dimensions / Aspect ratio mismatch"</td>
+                <td style="padding: 12px;">The portal expects strict $3.5	ext{ cm} 	imes 4.5	ext{ cm}$ ($413 	imes 531	ext{ px}$) passport framing.</td>
+                <td style="padding: 12px;">Crop the source photo to a 3:4 or 7:9 ratio before running TargetCompress to ensure proportional dimension scaling.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-subtle);">
+                <td style="padding: 12px; color: var(--accent-primary); font-weight: 600;">"Unsupported color space / Corrupt header"</td>
+                <td style="padding: 12px;">Photo was shot on iPhone with Display P3 wide gamut or CMYK print profiles.</td>
+                <td style="padding: 12px;">TargetCompress automatically strips unneeded ICC color profiles and converts canvas outputs to standard sRGB color space.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    
       </div>
 
-      <div style="margin: 40px 0 20px; text-align: center; background: rgba(88,101,242,0.12); border: 1px solid rgba(88,101,242,0.3); border-radius: 12px; padding: 28px;">
-        <h3 style="color: #fff; font-size: 20px; margin-bottom: 8px;">Ready to compress your file?</h3>
-        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 18px;">Process your images or documents strictly to target size directly in your browser. Zero uploads.</p>
-        <a href="/compress-image-to-100kb" class="btn btn-primary btn-large" style="text-decoration: none; display: inline-flex; font-weight: 700;">Compress Image to 100KB Now ➔</a>
+      <div style="margin: 40px 0 20px; text-align: center; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25); border-radius: 12px; padding: 28px;">
+        <h3 style="color: var(--text-main); font-size: 20px; margin-bottom: 8px;">Ready to optimize your files?</h3>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 18px;">Compress your images, PDFs, or videos strictly to your required target size directly in your browser. Zero server uploads.</p>
+        <a href="/" class="btn btn-primary btn-large" style="text-decoration: none; display: inline-flex; font-weight: 700;">Launch Free TargetCompress Suite ➔</a>
       </div>
-    </article>
+</article>
   </main>
 
   <footer class="site-footer">

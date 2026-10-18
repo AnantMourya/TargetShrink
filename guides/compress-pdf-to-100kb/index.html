@@ -112,48 +112,119 @@
 
     <article class="card" style="padding: clamp(24px, 5vw, 40px); border-radius: 16px; background: var(--bg-surface); border: 1px solid var(--border-subtle); line-height: 1.8;">
       <header style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px; margin-bottom: 24px; background: transparent; position: static; box-shadow: none;">
-        <h1 style="font-size: clamp(24px, 4vw, 34px); font-weight: 800; color: #fff; line-height: 1.25; margin-bottom: 12px;">How to Compress PDF to 100KB for Govt & Job Portals</h1>
+        <h1 style="font-size: clamp(24px, 4vw, 34px); font-weight: 800; color: var(--text-main); line-height: 1.25; margin-bottom: 12px;">How to Compress PDF to 100KB Online (Without Losing Text Quality)</h1>
         <div style="display: flex; gap: 16px; font-size: 13px; color: var(--text-sub); flex-wrap: wrap;">
-          <span>📅 September 2026</span>
-          <span>⏱️ 5 min read</span>
+          <span>📅 October 2026</span>
+          <span>⏱️ 8 min read</span>
           <span>🔒 Verified 100% In-Browser</span>
+          <span>✍️ TargetCompress Editorial Team</span>
         </div>
       </header>
 
-      <div class="guide-body" style="font-size: 15px; color: #cbd5e1;">
+      <div class="guide-body" style="font-size: 15.5px; color: var(--text-muted); line-height: 1.8;">
+        <p class="lead" style="font-size: 17px; font-weight: 500; color: var(--text-main); line-height: 1.6; margin-bottom: 24px;">PDF documents are the gold standard for official document submissions, including employment contracts, legal affidavits, income certificates, resumes, and university transcripts. However, flatbed scanners and mobile scanning apps easily generate 5MB to 10MB PDFs, triggering severe upload errors on portals capped at 100KB or 200KB. Here is the definitive guide to compressing PDF documents to strictly under 100KB in your browser while keeping text sharp, vector fonts intact, and layouts uncorrupted.</p>
         
-        <p class="lead">Reducing a scanned PDF document to under 100KB is one of the most frustrating challenges applicants face when submitting online government forms, university applications, and visa packets. Learn how our browser-side PDF compressor achieves sub-100KB sizes while keeping text razor-sharp.</p>
-
-        <h2>Why PDFs Balloon in Size</h2>
-        <p>A standard 1-page PDF document created by modern scanners or smartphone scanning apps frequently weighs between 2MB and 8MB. Why is a single page of text so large? Three hidden elements cause this inflation:</p>
-        <ul>
-          <li><strong>Uncompressed Scanner Color Depths:</strong> Scanner apps capture at 300 to 600 DPI in 24-bit full RGB color, even for simple black-and-white documents.</li>
-          <li><strong>Embedded Font Outlines:</strong> Full subsets of proprietary fonts are bundled into the PDF header.</li>
-          <li><strong>Duplicate Object Metadata:</strong> Thumbnail previews and XML document history streams add hidden kilobytes.</li>
+        <h2>Anatomy of a Bloated PDF: Why Are Single-Page Scans Several Megabytes?</h2>
+        <p>
+          A Portable Document Format (PDF) file is essentially an object container. When you look inside a 5MB single-page PDF, you will discover that 98% of the file size is consumed by three elements:
+        </p>
+        <ul style="color: var(--text-muted); padding-left: 20px; margin-bottom: 18px;">
+          <li style="margin-bottom: 8px;"><strong>Uncompressed High-DPI Scans:</strong> Scanner software (such as HP Smart, Canon Scan, CamScanner, or Adobe Scan) defaults to 300 DPI or 600 DPI 24-bit color scans. A single uncompressed A4 color scan contains over 25 million color values ($2480 	imes 3508 	imes 3	ext{ bytes} pprox 26	ext{ MB}$). Even with basic Flate compression, the embedded raster image easily weighs 3MB to 6MB.</li>
+          <li style="margin-bottom: 8px;"><strong>Duplicate Embedded Font Dictionaries:</strong> When Word documents or graphic design tools export to PDF, they often embed complete TrueType/OpenType font files (including characters in Greek, Cyrillic, and math symbols you never used). If a document uses three fonts, 2MB of font binaries are packaged into the PDF.</li>
+          <li style="margin-bottom: 8px;"><strong>Thumbnail Streams &amp; Metadata Chaff:</strong> High-end document editors embed XMP metadata packets, editing history, ICC color profiles, and pre-rendered page preview thumbnails that add hundreds of kilobytes of invisible bloat.</li>
         </ul>
 
-        <h2>The Secret to Clean 100KB PDF Compression</h2>
-        <p>Traditional tools crush the entire PDF raster quality indiscriminately, making letters blurry and illegible. TargetCompress uses an intelligent stream pipeline:</p>
-        <ol>
-          <li><strong>Text Stream Isolation:</strong> True vector typography is preserved whenever possible so letters stay crisp at any zoom level.</li>
-          <li><strong>Adaptive Image Downsampling:</strong> High-resolution embedded photographs or stamps are downsampled to 150 DPI—the perfect balance between file size and readability.</li>
-          <li><strong>Stream Deflation:</strong> Redundant object dictionaries and unreferenced font subsets are stripped cleanly.</li>
+        <h2>The Secret to 100KB PDF Compression: Vector vs. Raster Separation</h2>
+        <p>
+          Traditional, low-quality online PDF compressors apply a blunt-force method: they rasterize the entire PDF into a low-resolution JPEG and wrap it back in a PDF envelope.
+        </p>
+        <p>
+          <strong>This ruins your document.</strong> Your text is no longer selectable, vector typography becomes fuzzy, file links break, and automated Applicant Tracking Systems (ATS) or government OCR scanners can no longer read your resume or certificate.
+        </p>
+        <div class="limits-table-wrapper" style="margin: 20px 0;">
+          <table class="limits-table">
+            <thead>
+              <tr>
+                <th>Compression Technique</th>
+                <th>Text Searchability</th>
+                <th>Vector Font Outlines</th>
+                <th>Output Size</th>
+                <th>Portal Acceptance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Rasterization (Low Quality)</strong></td>
+                <td>❌ Lost (turned into flat pixels)</td>
+                <td>❌ Blurred</td>
+                <td>80 KB – 120 KB</td>
+                <td style="color: #ef4444;">High rejection rate by automated ATS / OCR.</td>
+              </tr>
+              <tr>
+                <td><strong>TargetCompress (PDF-Lib Engine)</strong></td>
+                <td>✅ 100% Preserved</td>
+                <td>✅ Razor-sharp at any zoom</td>
+                <td>85 KB – 96 KB</td>
+                <td style="color: #10b981;">100% compliant with government portals.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          TargetCompress utilizes <strong>PDF-Lib</strong> in client-side WebAssembly to perform structural optimization. Our engine separates embedded raster scans from vector text streams. It downsamples raster images to 150 DPI web standards using bicubic interpolation, recompresses image streams using optimized DCT/Flate encoders, strips duplicate font packets, and preserves true vector character outlines.
+        </p>
+
+        <h2>Step-by-Step Guide: Compressing PDF Documents to 100KB</h2>
+        <ol style="color: var(--text-muted); padding-left: 20px; margin-bottom: 18px;">
+          <li style="margin-bottom: 10px;"><strong>Open the PDF Tool:</strong> Navigate to <a href="/compress-pdf-to-100kb" style="color: var(--accent-primary); font-weight: 600;">TargetCompress PDF to 100KB</a>.</li>
+          <li style="margin-bottom: 10px;"><strong>Select Your PDF:</strong> Drag and drop your document into the upload zone or click <em>Browse Local PDF</em>.</li>
+          <li style="margin-bottom: 10px;"><strong>Review Page Count &amp; Budget:</strong> The tool displays the document name, original size, and total pages. The target limit is configured for <strong>100 KB</strong>.</li>
+          <li style="margin-bottom: 10px;"><strong>Execute Compression:</strong> Click <strong>Compress PDF Strictly Below Target</strong>. The in-browser WebAssembly engine optimizes streams across all pages in real time.</li>
+          <li style="margin-bottom: 10px;"><strong>Download:</strong> Tap <strong>Download Compressed PDF</strong>. Your document is saved locally, strictly under 100KB and ready for submission.</li>
         </ol>
 
-        <h2>Step-by-Step Guide</h2>
-        <p>1. Open <a href="/compress-pdf-to-100kb">Compress PDF to 100KB</a>.</p>
-        <p>2. Drag and drop your scanned marksheet, certificate, or resume.</p>
-        <p>3. Verify the target input is set to 100 KB and click <em>Compress to Exact Target Size</em>.</p>
-        <p>4. Download your validated sub-100KB PDF ready for submission.</p>
+        <h2>Frequently Asked Questions (PDF Compression)</h2>
+        <div class="faq-container" style="margin-top: 14px;">
+          <details class="faq-item" open>
+            <summary class="faq-summary">Can a multi-page PDF be compressed to under 100KB?</summary>
+            <div class="faq-content"><p>Yes, but it depends on the content. A 1-to-3 page document consisting of text and scanned certificates easily compresses under 100KB. For larger documents (10+ pages with color images), achieving 100KB requires aggressive grayscale conversion. If your portal allows it, consider compressing to 200KB or 500KB using our <a href="/compress-pdf-to-200kb" style="color: var(--accent-primary); font-weight: 600;">200KB PDF tool</a>.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-summary">Will the compressed PDF pass PDF/A validation for court or legal submissions?</summary>
+            <div class="faq-content"><p>Yes. TargetCompress preserves standard PDF ISO 32000-1 structures and maintains standard cross-reference tables, ensuring compatibility across Adobe Acrobat Reader, government e-filing systems, and court registries.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-summary">Are my contracts, tax filings, and legal affidavits safe?</summary>
+            <div class="faq-content"><p>TargetCompress is completely serverless. All PDF manipulation executes inside your browser's local sandbox memory. No file bytes or document contents are ever transmitted to any external server.</p></div>
+          </details>
+        </div>
         
+      
+        <h3 style="color: var(--text-main); font-size: 20px; margin-top: 32px; margin-bottom: 14px;">Internal Architecture: JBIG2 vs FlateDecode vs DCT Streams</h3>
+        <p>A PDF file is not a single image; it is an object-oriented document container composed of a header, an object graph (content streams, font descriptors, cross-reference tables), and an end-of-file trailer. When shrinking a PDF document to 100KB or less, the primary challenge is determining which internal streams account for the file size:</p>
+        <ul style="padding-left: 20px; margin-bottom: 18px;">
+          <li style="margin-bottom: 8px;"><strong>Vector Text &amp; Embedded Fonts (/Font, /FontDescriptor):</strong> Documents exported from Word or LaTeX often embed entire OpenType or TrueType font tables (several megabytes). Subsetting fonts to only the glyphs actually present in the document reduces font overhead from 2MB to under 25KB.</li>
+          <li style="margin-bottom: 8px;"><strong>FlateDecode Lossless Compression:</strong> Standard PDF streams use zlib deflate compression. While clean for text vectors, FlateDecode is inefficient for scanned paper textures.</li>
+          <li style="margin-bottom: 8px;"><strong>DCTDecode &amp; Bi-tonal JBIG2:</strong> For scanned certificates, color photographic regions are converted via DCTDecode (JPEG compression), while monochrome text layers can be tokenized via 1-bit binarization, achieving compression ratios exceeding 50:1 without sacrificing text readability.</li>
+        </ul>
+
+        <h3 style="color: var(--text-main); font-size: 20px; margin-top: 32px; margin-bottom: 14px;">Pre-Submission Verification Checklist for Legal and Academic Portals</h3>
+        <p>Before submitting your 100KB PDF to high-stakes portals (such as judicial e-filing systems, university admissions departments, or public tender platforms), complete this four-step quality audit:</p>
+        <ol style="padding-left: 20px; margin-bottom: 18px;">
+          <li style="margin-bottom: 8px;"><strong>100% Zoom Legibility Test:</strong> Open the compressed PDF in your default PDF reader at 100% and 200% scale. Verify that small 8pt and 10pt legal disclaimers and stamp dates are crisply legible.</li>
+          <li style="margin-bottom: 8px;"><strong>Text Searchability Check:</strong> If the original document had selectable text, press <code>Ctrl+F</code> (or <code>Cmd+F</code>) to confirm that the text layer was preserved rather than rasterized into a flat image.</li>
+          <li style="margin-bottom: 8px;"><strong>Metadata Scrubbing:</strong> Ensure that internal metadata (author name, editing timestamps, GPS coordinates from scanned photos) has been scrubbed for privacy compliance.</li>
+          <li style="margin-bottom: 8px;"><strong>Strict Size Ceiling:</strong> Remember that operating systems measure in binary kilobytes (1 KiB = 1,024 bytes), whereas web forms often measure in decimal kilobytes (1 KB = 1,000 bytes). A file of 101,200 bytes will be flagged as exceeding 100KB on strict servers. TargetCompress targets binary thresholds to guarantee safety.</li>
+        </ol>
+    
       </div>
 
-      <div style="margin: 40px 0 20px; text-align: center; background: rgba(88,101,242,0.12); border: 1px solid rgba(88,101,242,0.3); border-radius: 12px; padding: 28px;">
-        <h3 style="color: #fff; font-size: 20px; margin-bottom: 8px;">Ready to compress your file?</h3>
-        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 18px;">Process your images or documents strictly to target size directly in your browser. Zero uploads.</p>
-        <a href="/compress-pdf-to-100kb" class="btn btn-primary btn-large" style="text-decoration: none; display: inline-flex; font-weight: 700;">Compress PDF to 100KB Now ➔</a>
+      <div style="margin: 40px 0 20px; text-align: center; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25); border-radius: 12px; padding: 28px;">
+        <h3 style="color: var(--text-main); font-size: 20px; margin-bottom: 8px;">Ready to optimize your files?</h3>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 18px;">Compress your images, PDFs, or videos strictly to your required target size directly in your browser. Zero server uploads.</p>
+        <a href="/" class="btn btn-primary btn-large" style="text-decoration: none; display: inline-flex; font-weight: 700;">Launch Free TargetCompress Suite ➔</a>
       </div>
-    </article>
+</article>
   </main>
 
   <footer class="site-footer">
